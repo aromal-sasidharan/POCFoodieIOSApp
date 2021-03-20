@@ -68,7 +68,9 @@
             </collectionViewCellContentView>
             <size key="customSize" width="385" height="199"/>
             <connections>
+                <outlet property="bgCardView" destination="dvJ-QZ-iRY" id="S5C-Mf-pcl"/>
                 <outlet property="image" destination="hW0-Rf-Ywa" id="9db-Aq-dh1"/>
+                <outlet property="labelViewBg" destination="WiM-sC-Bg6" id="SEw-qG-gEj"/>
                 <outlet property="nameLable" destination="P8p-3L-bFA" id="KHZ-It-mh6"/>
             </connections>
             <point key="canvasLocation" x="134" y="47"/>
