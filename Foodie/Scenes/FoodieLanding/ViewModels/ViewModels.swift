@@ -10,9 +10,10 @@ import Foundation
 
 protocol AbstractCuisineViewModel {
     var name: String? {get set}
-    var imageUrl: URL? {get}
+    var imageUrl: URL? {get set}
     var entity: AbstractCuisine? {get set}
 }
+
 
 struct CuisineViewModel: AbstractCuisineViewModel {
     var name: String?
@@ -30,11 +31,57 @@ struct CuisineViewModel: AbstractCuisineViewModel {
         }
         var vm = CuisineViewModel()
         vm.entity = entity
-        print("☣️ entity url", entity.imageUrl)
         if let stringUrl = entity.imageUrl, let url = URL(string: stringUrl) {
             vm.imageUrl = url
         }
         vm.name = entity.name
+        return vm
+    }
+}
+
+
+protocol AbstractDishViewModel {
+    var name: String? {get set}
+    var imageUrl: URL? {get set}
+    var price: String? {get set}
+    var rating: String? {get set}
+    var quantity: String? {get set}
+    var entity: AbstractDish? {get set}
+    var canShowIncrementor: Bool? {get set}
+}
+
+struct CuisineDishViewModel: AbstractDishViewModel {
+    var canShowIncrementor: Bool?
+    
+    var name: String?
+    
+    var imageUrl: URL?
+    
+    var price: String?
+    
+    var rating: String?
+
+    var quantity: String?
+    
+    var entity: AbstractDish?
+    
+    init() {
+        
+    }
+    
+    static func create(entity: AbstractDish?, quantity: Int = 0) -> AbstractDishViewModel? {
+        guard let entity = entity else {
+            return nil
+        }
+        var vm = CuisineDishViewModel()
+        vm.entity = entity
+        if let stringUrl = entity.image, let url = URL(string: stringUrl) {
+            vm.imageUrl = url
+        }
+        vm.name = entity.name
+        vm.rating = "\(entity.rating ?? 0.0)"
+        vm.quantity = "\(quantity)"
+        vm.canShowIncrementor = quantity > 0
         return vm
     }
 }

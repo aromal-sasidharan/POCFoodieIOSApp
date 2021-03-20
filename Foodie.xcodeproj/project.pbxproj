@@ -36,6 +36,9 @@
 		58D1A61726060E11008BD3C2 /* Bundle+JsonResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A61426060E11008BD3C2 /* Bundle+JsonResource.swift */; };
 		58D1A61826060E11008BD3C2 /* Collection+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A61526060E11008BD3C2 /* Collection+Subscript.swift */; };
 		58D1A61926060E11008BD3C2 /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A61626060E11008BD3C2 /* UIImageView+Download.swift */; };
+		58D1A61E26060ED0008BD3C2 /* DishesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A61D26060ED0008BD3C2 /* DishesPresenter.swift */; };
+		58D1A62326060EFB008BD3C2 /* DishesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A62226060EFB008BD3C2 /* DishesInteractor.swift */; };
+		58D1A62826060F5B008BD3C2 /* DishesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A62726060F5B008BD3C2 /* DishesWorker.swift */; };
 		D3B540622605EAB700B90631 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B5405F2605EAB700B90631 /* Poppins-ExtraLight.ttf */; };
 		D3B540632605EAB700B90631 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B540602605EAB700B90631 /* Poppins-Medium.ttf */; };
 		D3B540642605EAB700B90631 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B540612605EAB700B90631 /* Poppins-Regular.ttf */; };
@@ -95,6 +98,9 @@
 		58D1A61426060E11008BD3C2 /* Bundle+JsonResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+JsonResource.swift"; sourceTree = "<group>"; };
 		58D1A61526060E11008BD3C2 /* Collection+Subscript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Subscript.swift"; sourceTree = "<group>"; };
 		58D1A61626060E11008BD3C2 /* UIImageView+Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
+		58D1A61D26060ED0008BD3C2 /* DishesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesPresenter.swift; sourceTree = "<group>"; };
+		58D1A62226060EFB008BD3C2 /* DishesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesInteractor.swift; sourceTree = "<group>"; };
+		58D1A62726060F5B008BD3C2 /* DishesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesWorker.swift; sourceTree = "<group>"; };
 		D3B5405F2605EAB700B90631 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
 		D3B540602605EAB700B90631 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		D3B540612605EAB700B90631 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
@@ -220,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				58D1A59B2605AB38008BD3C2 /* FoodieCuisineWorker.swift */,
+				58D1A62726060F5B008BD3C2 /* DishesWorker.swift */,
 			);
 			path = MicroServices;
 			sourceTree = "<group>";
@@ -251,6 +258,8 @@
 			children = (
 				58D1A5D92605E811008BD3C2 /* DishListView.swift */,
 				58D1A5DE2605E846008BD3C2 /* DishListView.xib */,
+				58D1A61D26060ED0008BD3C2 /* DishesPresenter.swift */,
+				58D1A62226060EFB008BD3C2 /* DishesInteractor.swift */,
 			);
 			path = DishList;
 			sourceTree = "<group>";
@@ -432,13 +441,16 @@
 				58560D112600E61900267341 /* FoodieLandingView.swift in Sources */,
 				58D1A5BD2605DD8D008BD3C2 /* BannerCollectionViewCell.swift in Sources */,
 				58560D222600E81600267341 /* Configurator.swift in Sources */,
+				58D1A61E26060ED0008BD3C2 /* DishesPresenter.swift in Sources */,
 				58D1A61726060E11008BD3C2 /* Bundle+JsonResource.swift in Sources */,
 				58D1A5962605AAF8008BD3C2 /* Entities.swift in Sources */,
+				58D1A62826060F5B008BD3C2 /* DishesWorker.swift in Sources */,
 				58D1A5DA2605E811008BD3C2 /* DishListView.swift in Sources */,
 				58D1A61926060E11008BD3C2 /* UIImageView+Download.swift in Sources */,
 				58560CDB2600E4E900267341 /* SceneDelegate.swift in Sources */,
 				58D1A59C2605AB38008BD3C2 /* FoodieCuisineWorker.swift in Sources */,
 				58560D272600E95200267341 /* FoodieLandingProtocols.swift in Sources */,
+				58D1A62326060EFB008BD3C2 /* DishesInteractor.swift in Sources */,
 				58D1A5E52605E916008BD3C2 /* FoodieLandingViewRouter.swift in Sources */,
 				58D1A61826060E11008BD3C2 /* Collection+Subscript.swift in Sources */,
 			);

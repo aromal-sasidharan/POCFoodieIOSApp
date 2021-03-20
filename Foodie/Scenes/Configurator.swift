@@ -15,10 +15,17 @@ class FoodieConfigurator {
         let router: AbstractFoodieLandingViewRouter = FoodieLandingViewRouter()
         let cuisineWorker:AbstractFoodieCuisineWorker = FoodieCuisineWorker()
         var cuisineInteractor: AbstractFoodieLandingInteractor = FoodieLandingInteractor()
+        let dishesWorker: AbstractDishesWorker = DishesWorker()
+        var dishesInteractor: AbstractDishesInteractor = DishesInteractor()
+        dishesInteractor.dishesWorker = dishesWorker
+        var dishesPresenter: AbstractDishesPresenter = DishesPresenter()
+        dishesPresenter.interactor = dishesInteractor
+        dishesInteractor.ouput = dishesPresenter
         cuisineInteractor.worker = cuisineWorker
         view.presenter = presenter
         presenter.view = view
         presenter.router = router
+        presenter.dishesPresenter = dishesPresenter
         presenter.interactor = cuisineInteractor
         cuisineInteractor.output = presenter
         return view

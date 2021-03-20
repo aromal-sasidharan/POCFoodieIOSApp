@@ -13,6 +13,8 @@ class DishTableViewCell: UITableViewCell {
     
     @IBOutlet weak var viewPlusMinus: UIView!
     @IBOutlet weak var dishImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     class var identifier: String {
         String(describing: Self.self)
     }
@@ -34,5 +36,14 @@ class DishTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configureViewModel(vm: AbstractDishViewModel?) {
+        self.nameLabel.text = vm?.name ?? ""
+        self.priceLabel.text = vm?.price ?? "0.0"
+        if let url = vm?.imageUrl {
+            self.dishImageView.downloaded(from: url, contentMode: .scaleToFill)
+        }
+        
     }
 }

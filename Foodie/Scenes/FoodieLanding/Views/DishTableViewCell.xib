@@ -35,19 +35,19 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tomato Gravey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1WR-p7-fuR">
-                                <rect key="frame" x="98" y="24" width="108.5" height="19"/>
+                                <rect key="frame" x="98" y="24" width="125" height="22.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₹ 200.30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8j-jW-m0z">
-                                <rect key="frame" x="98" y="44" width="62" height="19"/>
+                                <rect key="frame" x="98" y="48" width="67.5" height="22.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                 <color key="textColor" red="0.49407786129999998" green="0.49413996929999998" blue="0.49405676129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZG-4k-9Fn">
-                                <rect key="frame" x="98" y="64" width="110" height="20"/>
+                                <rect key="frame" x="98" y="71.5" width="110" height="20"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="BLc-xx-buE">
                                         <rect key="frame" x="0.0" y="0.0" width="110" height="20"/>
@@ -178,7 +178,7 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="d8j-jW-m0z" secondAttribute="trailing" constant="20" symbolic="YES" id="hcB-mW-7Vw"/>
                             <constraint firstItem="0Yj-ZX-7Pe" firstAttribute="centerY" secondItem="GFk-xn-yKN" secondAttribute="centerY" id="kCu-gH-AhW"/>
                             <constraint firstItem="1WR-p7-fuR" firstAttribute="top" secondItem="GFk-xn-yKN" secondAttribute="top" constant="5" id="meB-XX-I1S"/>
-                            <constraint firstItem="d8j-jW-m0z" firstAttribute="firstBaseline" secondItem="1WR-p7-fuR" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="oCt-vp-2rP"/>
+                            <constraint firstItem="d8j-jW-m0z" firstAttribute="firstBaseline" secondItem="1WR-p7-fuR" secondAttribute="baseline" constant="20" symbolType="layoutAnchor" id="oCt-vp-2rP"/>
                             <constraint firstItem="GFk-xn-yKN" firstAttribute="centerY" secondItem="pCJ-YH-BXR" secondAttribute="centerY" id="sIR-As-wY5"/>
                         </constraints>
                     </view>
@@ -196,6 +196,8 @@
             <connections>
                 <outlet property="bgCardView" destination="pCJ-YH-BXR" id="EqA-MD-i9l"/>
                 <outlet property="dishImageView" destination="GFk-xn-yKN" id="lJr-rb-y0x"/>
+                <outlet property="nameLabel" destination="1WR-p7-fuR" id="EKk-sz-BWl"/>
+                <outlet property="priceLabel" destination="d8j-jW-m0z" id="alC-tA-KRA"/>
                 <outlet property="viewPlusMinus" destination="0Yj-ZX-7Pe" id="Omy-x0-1XB"/>
             </connections>
             <point key="canvasLocation" x="164.49275362318841" y="121.20535714285714"/>

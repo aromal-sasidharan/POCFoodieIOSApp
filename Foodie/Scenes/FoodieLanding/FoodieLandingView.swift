@@ -66,7 +66,7 @@ extension FoodieLandingView: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         else if let cell = tableView.dequeueReusableCell(withIdentifier: DishTableViewCell.identifier, for: indexPath) as? DishTableViewCell, indexPath.section == 1 {
-            
+            cell.configureViewModel(vm: presenter?.dishViewModel(indexPath: indexPath))
             return cell
         }
         return UITableViewCell()

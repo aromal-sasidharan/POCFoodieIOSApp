@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 protocol AbstractBannerCollectionViewOutput {
     func didTapOnCuisine(vm: AbstractCuisineViewModel)
+    func didSwipeToCuisine(vm: AbstractCuisineViewModel)
 }
 protocol AbstractBannerCollectionViewInput {
     func numberOfCusines() -> Int?
@@ -71,7 +72,17 @@ extension BannerTableViewCell: AbstractBannerCollectionView {
 }
 
 extension BannerTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if let ip = indexPathForItemAtCenter(of: bannerCollectionView),
+           let vm = input?.modelForIndexPath(indexPath: ip) {
+                output?.didSwipeToCuisine(vm: vm)
+        }
+    }
+
+    func indexPathForItemAtCenter(of scrollView: UIScrollView) -> IndexPath? {
+        let center = CGPoint(x: scrollView.contentOffset.x + (scrollView.frame.width / 2), y: (scrollView.frame.height / 2))
+        return bannerCollectionView.indexPathForItem(at: center)
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let count = input?.numberOfCusines() {
             return count

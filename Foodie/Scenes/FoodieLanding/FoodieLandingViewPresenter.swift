@@ -30,12 +30,23 @@ extension FoodieLandingViewPresenter: AbstractFoodieLandingInteractorOutput {
         self.viewModels.append(contentsOf: vms)
         print("View Models count", viewModels.count)
         self.view?.loadDataForSection(section: 0)
+        if let firstCuisine = entities[safe: 0], let cuisineId = firstCuisine.id {
+            dishesPresenter?.loadDishForCuisine(cuisineId: cuisineId)
+            dishesPresenter?.output = self
+        }
+        
+    }
+}
+
+extension FoodieLandingViewPresenter: AbstractDishListPresenterOutput {
+    func onDishesUpdated() {
+        self.view?.loadDataForSection(section: 1)
     }
 }
 
 extension FoodieLandingViewPresenter: AbstractFoodieLandingViewOutput {
     func totalSections() -> Int {
-        return 1
+        return 2
     }
     
     func totalRowsForSection(_ section: Int) -> Int {
@@ -43,15 +54,14 @@ extension FoodieLandingViewPresenter: AbstractFoodieLandingViewOutput {
             return 1
         }
         if section == 1 {
-            return 10
+            return dishesPresenter?.numberOfDishes() ?? 0
         }
         return 0
     }
-    
-    func dishForIndex() {
-        
-    }
 
+    func dishViewModel(indexPath: IndexPath) -> AbstractDishViewModel? {
+        return dishesPresenter?.dishViewModelFor(index: indexPath.row)
+    }
     func viewDidLoad() {
         interactor?.loadAllCuisines()
     }
@@ -73,5 +83,11 @@ extension FoodieLandingViewPresenter: AbstractBannerCollectionViewOutput {
     func didTapOnCuisine(vm: AbstractCuisineViewModel) {
         print("did tapped on cuisine", vm.entity?.name ?? "")
         router?.routeToDishList(from: self.view, withCuisineId: vm.entity?.id ?? "")
+    }
+    func didSwipeToCuisine(vm: AbstractCuisineViewModel) {
+        if let cuisine = vm.entity, let cuisineId = cuisine.id {
+            dishesPresenter?.loadDishForCuisine(cuisineId: cuisineId)
+            dishesPresenter?.output = self
+        }
     }
 }

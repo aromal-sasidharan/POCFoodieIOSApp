@@ -12,6 +12,7 @@ protocol AbstractDishListPresenterOutput {
 }
 
 class DishesPresenter: AbstractDishesPresenter {
+   
     var output: AbstractDishListPresenterOutput?
     var interactor: AbstractDishesInteractor?
     var viewModels: [AbstractDishViewModel] = []
@@ -22,9 +23,15 @@ class DishesPresenter: AbstractDishesPresenter {
         viewModels.count
     }
     func onLoadDishes(dishes: [Entities.Dish]) {
+        print("☣️ dishes are", dishes.count)
         let vms: [AbstractDishViewModel] = dishes.map({CuisineDishViewModel.create(entity: $0)}).compactMap({$0})
         self.viewModels.removeAll()
         self.viewModels.append(contentsOf: vms)
         self.output?.onDishesUpdated()
     }
+    
+    func loadDishForCuisine(cuisineId: String) {
+        interactor?.loadCuisineDishes(cuisineId: cuisineId)
+    }
+    
 }

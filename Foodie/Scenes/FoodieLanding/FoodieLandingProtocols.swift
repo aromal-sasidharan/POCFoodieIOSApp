@@ -27,7 +27,8 @@ protocol AbstractFoodieLandingViewOutput {
     func viewDidLoad()
     func totalSections() -> Int
     func totalRowsForSection(_ section: Int) -> Int
-    func setBannerView(view: AbstractBannerCollectionView) 
+    func setBannerView(view: AbstractBannerCollectionView)
+    func dishViewModel(indexPath: IndexPath) -> AbstractDishViewModel? 
 }
 
 protocol AbstractFoodieLandingInteractorOutput {
@@ -35,16 +36,22 @@ protocol AbstractFoodieLandingInteractorOutput {
     
 }
 
-protocol AbstractDishesPresenter {
-    
+protocol AbstractDishesPresenter: AbstractDishesInteractorOutput {
+    var output: AbstractDishListPresenterOutput? {get set}
+    var interactor: AbstractDishesInteractor? {get set}
+    func loadDishForCuisine(cuisineId: String)
+    func dishViewModelFor(index: Int) -> AbstractDishViewModel?
+    func numberOfDishes() -> Int
 }
 
-protocol AbstractDishesPresenterInput {
-    func onLoadDishes()
+protocol AbstractDishesInteractorOutput {
+    func onLoadDishes(dishes: [Entities.Dish])
 }
 
 protocol AbstractDishesInteractor {
-    
+    var dishesWorker: AbstractDishesWorker? {get set}
+    var ouput: AbstractDishesInteractorOutput? {get set}
+    func loadCuisineDishes(cuisineId: String)
 }
 
 protocol AbstractFoodieLandingInteractor {
