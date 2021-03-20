@@ -24,7 +24,6 @@ extension DishesInteractor: AbstractDishesWorkerOutput {
     func onLoadDishes(result: Result<[Entities.Dish], Error>) {
         switch result {
         case .success(let dishes):
-            print("☣️ dishes entities are", dishes.count)
             if sortByRating {
                 ouput?.onLoadDishes(dishes: dishes.sorted(by: { (x, y) -> Bool in
                     x.rating ?? 0.0 >= 4

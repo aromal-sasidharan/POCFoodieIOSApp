@@ -7,14 +7,24 @@
 
 import UIKit
 
+protocol AbstractDishTableViewCellOutput {
+    func addToCart(vm: AbstractDishViewModel?, indexPath: IndexPath?)
+    func removeFromCart(vm: AbstractDishViewModel?,indexPath: IndexPath? , deleteAll: Bool)
+}
+
 class DishTableViewCell: UITableViewCell {
-    
+    var output: AbstractDishTableViewCellOutput?
+    var vm: AbstractDishViewModel?
+    var indexPath: IndexPath?
     @IBOutlet weak var bgCardView: UIView!
-    
     @IBOutlet weak var viewPlusMinus: UIView!
     @IBOutlet weak var dishImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var quantityLabel: UILabel!
+    @IBOutlet weak var buttonPlus: UIButton!
+    @IBOutlet weak var buttonMinus: UIButton!
+    @IBOutlet weak var buttonCart: UIButton!
     class var identifier: String {
         String(describing: Self.self)
     }
@@ -29,17 +39,28 @@ class DishTableViewCell: UITableViewCell {
         
         dishImageView.layer.cornerRadius = 10.0
         viewPlusMinus.layer.cornerRadius = 10.0
+        
+        buttonPlus.addTarget(self, action: #selector(addToCart), for: .touchUpInside)
+        buttonMinus.addTarget(self, action: #selector(removeFromCart), for: .touchUpInside)
+        buttonCart.addTarget(self, action: #selector(addToCart), for: .touchUpInside)
 
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
-    func configureViewModel(vm: AbstractDishViewModel?) {
+    @objc func addToCart() {
+        output?.addToCart(vm: vm, indexPath: indexPath)
+    }
+    
+    @objc func removeFromCart() {
+        output?.removeFromCart(vm: vm, indexPath: indexPath, deleteAll: false)
+    }
+    
+    func configureViewModel(vm: AbstractDishViewModel?, output: AbstractDishTableViewCellOutput?) {
+        self.vm = vm
+        self.output = output
         self.nameLabel.text = vm?.name ?? ""
+        self.quantityLabel.text = vm?.quantity ?? "0"
+        self.buttonCart.isHidden = (vm?.canShowIncrementor == true)
+        self.viewPlusMinus.isHidden = (vm?.canShowIncrementor == true) == false
         self.priceLabel.text = vm?.price ?? "0.0"
         if let url = vm?.imageUrl {
             self.dishImageView.downloaded(from: url, contentMode: .scaleToFill)

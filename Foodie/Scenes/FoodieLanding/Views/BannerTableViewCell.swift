@@ -62,7 +62,6 @@ class BannerTableViewCell: UITableViewCell {
 
 extension BannerTableViewCell: AbstractBannerCollectionView {
     func reload() {
-        print("☣️ BannerTableViewCell reload", input?.numberOfCusines())
         self.bannerCollectionView.reloadData()
 //        if let count = input?.infiniteCount() {
 ////            self.bannerCollectionView.scrollToItem(at: [0,count/2], at: .centeredHorizontally, animated: false)

@@ -14,13 +14,28 @@ class FoodieLandingViewPresenter:AbstractFoodieLandingPresenter {
     var view: AbstractFoodieLandingView?
     
     var interactor: AbstractFoodieLandingInteractor?
-    
-    var dishesPresenter: AbstractDishesPresenter?
+    var cartSession: AbstractCartSessionInteractor? {
+        didSet {
+            self.cartSession?
+                .subscribeForCartNotication(identifier: String(describing: Self.self),
+                                            notifier: self)
+        }
+    }
+    var dishesPresenter: AbstractDishesPresenter? {
+        didSet {
+            dishesPresenter?.output = self
+        }
+    }
     
     var viewModels: [AbstractCuisineViewModel] = []
     init() {
     }
     
+}
+extension FoodieLandingViewPresenter: AbstractCartCountNotifier {
+    func cartCountUpdate(count: Int) {
+        view?.updateCartCount(count: count)
+    }
 }
 
 extension FoodieLandingViewPresenter: AbstractFoodieLandingInteractorOutput {
@@ -28,11 +43,9 @@ extension FoodieLandingViewPresenter: AbstractFoodieLandingInteractorOutput {
         let vms = entities.map({CuisineViewModel.create(entity: $0)}).compactMap({$0})
         self.viewModels.removeAll()
         self.viewModels.append(contentsOf: vms)
-        print("View Models count", viewModels.count)
         self.view?.loadDataForSection(section: 0)
         if let firstCuisine = entities[safe: 0], let cuisineId = firstCuisine.id {
             dishesPresenter?.loadDishForCuisine(cuisineId: cuisineId)
-            dishesPresenter?.output = self
         }
         
     }
@@ -84,13 +97,27 @@ extension FoodieLandingViewPresenter: AbstractBannerCollectionViewInput {
 
 extension FoodieLandingViewPresenter: AbstractBannerCollectionViewOutput {
     func didTapOnCuisine(vm: AbstractCuisineViewModel) {
-        print("did tapped on cuisine", vm.entity?.name ?? "")
         router?.routeToDishList(from: self.view, withCuisineId: vm.entity?.id ?? "")
     }
     func didSwipeToCuisine(vm: AbstractCuisineViewModel) {
         if let cuisine = vm.entity, let cuisineId = cuisine.id {
             dishesPresenter?.loadDishForCuisine(cuisineId: cuisineId)
-            dishesPresenter?.output = self
+        }
+    }
+}
+
+extension FoodieLandingViewPresenter: AbstractDishTableViewCellOutput {
+    func addToCart(vm: AbstractDishViewModel?, indexPath: IndexPath? ) {
+        if let dish = vm?.entity as? Entities.Dish {
+            cartSession?.addDish(dish: dish)
+            self.view?.loadDataForRow(section: indexPath?.section, row: indexPath?.row)
+        }
+    }
+    
+    func removeFromCart(vm: AbstractDishViewModel?, indexPath: IndexPath?, deleteAll: Bool) {
+        if let dish = vm?.entity as? Entities.Dish {
+            cartSession?.removeDish(dish: dish)
+            self.view?.loadDataForRow(section: indexPath?.section, row: indexPath?.row)
         }
     }
 }

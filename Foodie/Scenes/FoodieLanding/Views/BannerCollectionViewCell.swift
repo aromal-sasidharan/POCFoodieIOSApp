@@ -25,7 +25,6 @@ class BannerViewCollectionViewCell: UICollectionViewCell {
     
     func configureViewModel(vm: AbstractCuisineViewModel) {
         self.nameLable.text = vm.name
-        print("☣️ url", vm.imageUrl)
         if let url = vm.imageUrl {
             self.image.downloaded(from: url, contentMode: .scaleToFill)
         }

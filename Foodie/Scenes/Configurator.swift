@@ -19,14 +19,17 @@ class FoodieConfigurator {
         var dishesInteractor: AbstractDishesInteractor = DishesInteractor()
         dishesInteractor.dishesWorker = dishesWorker
         var dishesPresenter: AbstractDishesPresenter = DishesPresenter()
+        let cartSession = CartSessionInteractor.shared
         dishesPresenter.interactor = dishesInteractor
         dishesInteractor.ouput = dishesPresenter
+        dishesPresenter.cartSession = cartSession
         cuisineInteractor.worker = cuisineWorker
         view.presenter = presenter
         presenter.view = view
         presenter.router = router
         presenter.dishesPresenter = dishesPresenter
         presenter.interactor = cuisineInteractor
+        presenter.cartSession = cartSession
         cuisineInteractor.output = presenter
         return view
     }
