@@ -40,6 +40,7 @@
 		58D1A62326060EFB008BD3C2 /* DishesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A62226060EFB008BD3C2 /* DishesInteractor.swift */; };
 		58D1A62826060F5B008BD3C2 /* DishesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A62726060F5B008BD3C2 /* DishesWorker.swift */; };
 		58D1A63F26064955008BD3C2 /* CartInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A63E26064955008BD3C2 /* CartInteractor.swift */; };
+		58D1A644260666F7008BD3C2 /* UIVIew+RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A643260666F7008BD3C2 /* UIVIew+RoundedCorners.swift */; };
 		D37D9159260615E7004F5B44 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37D9158260615E7004F5B44 /* Media.xcassets */; };
 		D37D91622606179B004F5B44 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D91612606179B004F5B44 /* CartView.swift */; };
 		D37D9167260617B1004F5B44 /* CartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D37D9166260617B1004F5B44 /* CartView.xib */; };
@@ -109,6 +110,7 @@
 		58D1A62226060EFB008BD3C2 /* DishesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesInteractor.swift; sourceTree = "<group>"; };
 		58D1A62726060F5B008BD3C2 /* DishesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesWorker.swift; sourceTree = "<group>"; };
 		58D1A63E26064955008BD3C2 /* CartInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartInteractor.swift; sourceTree = "<group>"; };
+		58D1A643260666F7008BD3C2 /* UIVIew+RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+RoundedCorners.swift"; sourceTree = "<group>"; };
 		D37D9158260615E7004F5B44 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		D37D91612606179B004F5B44 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		D37D9166260617B1004F5B44 /* CartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartView.xib; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				58D1A61526060E11008BD3C2 /* Collection+Subscript.swift */,
 				58D1A61626060E11008BD3C2 /* UIImageView+Download.swift */,
 				D37D916D2606231D004F5B44 /* NotificationBarButton.swift */,
+				58D1A643260666F7008BD3C2 /* UIVIew+RoundedCorners.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				D37D916E2606231D004F5B44 /* NotificationBarButton.swift in Sources */,
 				58560D112600E61900267341 /* FoodieLandingView.swift in Sources */,
 				58D1A5BD2605DD8D008BD3C2 /* BannerCollectionViewCell.swift in Sources */,
+				58D1A644260666F7008BD3C2 /* UIVIew+RoundedCorners.swift in Sources */,
 				58D1A63F26064955008BD3C2 /* CartInteractor.swift in Sources */,
 				58560D222600E81600267341 /* Configurator.swift in Sources */,
 				58D1A61E26060ED0008BD3C2 /* DishesPresenter.swift in Sources */,
