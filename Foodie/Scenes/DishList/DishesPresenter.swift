@@ -16,15 +16,22 @@ class DishesPresenter: AbstractDishesPresenter {
     var output: AbstractDishListPresenterOutput?
     var interactor: AbstractDishesInteractor?
     var viewModels: [AbstractDishViewModel] = []
+    var cartSession: AbstractCartSessionInteractor?
     func dishViewModelFor(index: Int) -> AbstractDishViewModel?  {
-        return viewModels[safe: index]
+        var vm = viewModels[safe: index]
+        let quantity:Int = cartSession?.quantityForDish(dish: vm?.entity) ?? 0
+        vm = CuisineDishViewModel.updateQuantity(vm: vm, quantity: quantity)
+        return vm
     }
     func numberOfDishes() -> Int {
         viewModels.count
     }
     func onLoadDishes(dishes: [Entities.Dish]) {
-        print("☣️ dishes are", dishes.count)
-        let vms: [AbstractDishViewModel] = dishes.map({CuisineDishViewModel.create(entity: $0)}).compactMap({$0})
+        let vms: [AbstractDishViewModel] = dishes
+            .map({CuisineDishViewModel
+                    .create(entity: $0)})
+            .compactMap({$0})
+        
         self.viewModels.removeAll()
         self.viewModels.append(contentsOf: vms)
         self.output?.onDishesUpdated()

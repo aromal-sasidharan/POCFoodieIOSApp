@@ -20,6 +20,12 @@ protocol AbstractDish: Codable {
     var price: Double? {get set}
 }
 
+protocol AbstractCartItem: Codable {
+    var id:String {get set}
+    var quantiy: Int {get set}
+    var dish: Entities.Dish {get set}
+}
+
 protocol AbstractCuisineDish: Codable {
     var id:String? {get set}
     var dishes: [Entities.Dish]? {get set}
@@ -56,6 +62,22 @@ public enum Entities {
     public struct CuisineDish: AbstractCuisineDish {
         var id: String?
         var dishes: [Entities.Dish]?
+    }
+    
+    public struct CartItem: AbstractCartItem {
+        var id: String
+        
+        var quantiy: Int
+        
+        var dish: Entities.Dish
+        
+        static func create(dish: Entities.Dish) -> AbstractCartItem? {
+            guard let id = dish.id else {
+                return nil
+            }
+            let cartItem = CartItem(id: id, quantiy: 1, dish: dish)
+            return cartItem
+        }
     }
 }
 

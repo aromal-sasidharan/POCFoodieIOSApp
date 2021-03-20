@@ -195,9 +195,13 @@
             <color key="backgroundColor" red="0.97275525330000001" green="0.9606756568" blue="0.94884866479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="bgCardView" destination="pCJ-YH-BXR" id="EqA-MD-i9l"/>
+                <outlet property="buttonCart" destination="6Qo-IW-E8R" id="cgn-eu-p2o"/>
+                <outlet property="buttonMinus" destination="4X5-g4-xeB" id="P2D-G2-DMa"/>
+                <outlet property="buttonPlus" destination="Vzi-Pf-IpQ" id="FrW-5S-L68"/>
                 <outlet property="dishImageView" destination="GFk-xn-yKN" id="lJr-rb-y0x"/>
                 <outlet property="nameLabel" destination="1WR-p7-fuR" id="EKk-sz-BWl"/>
                 <outlet property="priceLabel" destination="d8j-jW-m0z" id="alC-tA-KRA"/>
+                <outlet property="quantityLabel" destination="lBi-Jc-VAX" id="ggP-Nq-2t1"/>
                 <outlet property="viewPlusMinus" destination="0Yj-ZX-7Pe" id="Omy-x0-1XB"/>
             </connections>
             <point key="canvasLocation" x="164.49275362318841" y="121.20535714285714"/>

@@ -21,7 +21,7 @@ class FoodieLandingView: UIViewController, AbstractFoodieLandingView {
     
     func navigationBtn() {
         self.navigationItem.rightBarButtonItem = barBtn.shared
-        barBtn.shared.setBadge(with: 10)
+        
         barBtn.shared.tapAction = {
             self.presenter?.navigateCartView()
         }
@@ -50,11 +50,21 @@ extension FoodieLandingView {
 }
 extension FoodieLandingView {
     func loadDataForSection(section: Int?) {
-        print("☣️ loading table", section)
         guard let section = section else {
             return self.foodieTableView.reloadData()
         }
-        self.foodieTableView.reloadSections([section], with: .automatic)
+        self.foodieTableView.reloadSections([section], with: .none)
+    }
+    func loadDataForRow(section: Int?, row: Int?) {
+        guard let section = section, let row = row else {
+            return
+        }
+        self.foodieTableView.reloadRows(at: [[section,row]], with: .none)
+    }
+}
+extension FoodieLandingView {
+    func updateCartCount(count: Int) {
+        barBtn.shared.setBadge(with: count)
     }
 }
 extension FoodieLandingView: UITableViewDelegate, UITableViewDataSource {
@@ -66,16 +76,17 @@ extension FoodieLandingView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("☣️ cellForRowAt ", indexPath.section)
         if let cell = tableView.dequeueReusableCell(withIdentifier: BannerTableViewCell.identifier, for: indexPath) as? BannerTableViewCell, indexPath.section == 0 {
             cell.input = presenter as? AbstractBannerCollectionViewInput
             cell.output = presenter as? AbstractBannerCollectionViewOutput
-            print("☣️ Banner cell")
             presenter?.setBannerView(view: cell)
             return cell
         }
         else if let cell = tableView.dequeueReusableCell(withIdentifier: DishTableViewCell.identifier, for: indexPath) as? DishTableViewCell, indexPath.section == 1 {
-            cell.configureViewModel(vm: presenter?.dishViewModel(indexPath: indexPath))
+            let output = presenter as? AbstractDishTableViewCellOutput
+            cell.indexPath = indexPath
+            cell.configureViewModel(vm: presenter?.dishViewModel(indexPath: indexPath),
+                                    output: output)
             return cell
         }
         return UITableViewCell()

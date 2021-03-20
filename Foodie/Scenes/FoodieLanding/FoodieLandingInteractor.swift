@@ -19,7 +19,6 @@ class FoodieLandingInteractor: AbstractFoodieLandingInteractor, AbstractFoodieCu
     func onLoadCuisines(result: Result<[Entities.Cuisine], Error>) {
         switch result {
         case .success(let cuisines):
-            print("cuisines count", cuisines.count)
             output?.onLoadCusines(entities: cuisines)
             break
         case .failure(let error):

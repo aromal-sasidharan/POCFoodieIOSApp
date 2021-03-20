@@ -69,7 +69,7 @@ struct CuisineDishViewModel: AbstractDishViewModel {
         
     }
     
-    static func create(entity: AbstractDish?, quantity: Int = 0) -> AbstractDishViewModel? {
+    static func create(entity: AbstractDish?) -> AbstractDishViewModel? {
         guard let entity = entity else {
             return nil
         }
@@ -80,8 +80,12 @@ struct CuisineDishViewModel: AbstractDishViewModel {
         }
         vm.name = entity.name
         vm.rating = "\(entity.rating ?? 0.0)"
-        vm.quantity = "\(quantity)"
-        vm.canShowIncrementor = quantity > 0
+        return vm
+    }
+    static func updateQuantity(vm: AbstractDishViewModel?, quantity: Int) -> AbstractDishViewModel? {
+        var vm = vm
+        vm?.quantity = String(quantity)
+        vm?.canShowIncrementor = quantity > 0
         return vm
     }
 }
