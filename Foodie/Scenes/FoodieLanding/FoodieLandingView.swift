@@ -14,8 +14,17 @@ class FoodieLandingView: UIViewController, AbstractFoodieLandingView {
     @IBOutlet weak var foodieTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationBtn()
         setupTableView()
         presenter?.viewDidLoad()
+    }
+    
+    func navigationBtn() {
+        self.navigationItem.rightBarButtonItem = barBtn.shared
+        barBtn.shared.setBadge(with: 10)
+        barBtn.shared.tapAction = {
+            self.presenter?.navigateCartView()
+        }
     }
 }
 extension FoodieLandingView {
@@ -74,3 +83,4 @@ extension FoodieLandingView: UITableViewDelegate, UITableViewDataSource {
     
     
 }
+

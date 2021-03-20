@@ -28,3 +28,11 @@ extension UIImageView {
         downloaded(from: url, contentMode: mode)
     }
 }
+
+extension UIView {
+    func roundCorners(radius: CGFloat) {
+        self.clipsToBounds = true
+        self.layer.cornerRadius = radius
+        self.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+    }
+}

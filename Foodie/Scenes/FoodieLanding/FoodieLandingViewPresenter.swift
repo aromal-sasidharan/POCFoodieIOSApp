@@ -34,6 +34,9 @@ extension FoodieLandingViewPresenter: AbstractFoodieLandingInteractorOutput {
 }
 
 extension FoodieLandingViewPresenter: AbstractFoodieLandingViewOutput {
+    func navigateCartView() {
+        router?.routeToCartView(from: self.view)
+    }
     func totalSections() -> Int {
         return 1
     }

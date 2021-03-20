@@ -17,4 +17,12 @@ class FoodieLandingViewRouter: AbstractFoodieLandingViewRouter {
     }
     
     
+    func routeToCartView(from: AbstractFoodieLandingView?) {
+        guard let vc = from as? FoodieLandingView else {
+            return
+        }
+        let subVc = FoodieConfigurator.shared.createCartView()
+        vc.navigationController?.pushViewController(subVc, animated: true)
+    }
+    
 }

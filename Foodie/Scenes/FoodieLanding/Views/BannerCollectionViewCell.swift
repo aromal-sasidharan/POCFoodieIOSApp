@@ -27,12 +27,11 @@ class BannerViewCollectionViewCell: UICollectionViewCell {
         self.nameLable.text = vm.name
         print("☣️ url", vm.imageUrl)
         if let url = vm.imageUrl {
-            
             self.image.downloaded(from: url, contentMode: .scaleToFill)
         }
     }
     func setupViews() {
-//        labelViewBg.roundCorners(radius: 10.0)
+        labelViewBg.roundCorners(radius: 10.0)
         bgCardView.layer.shadowColor = UIColor.lightGray.cgColor
         bgCardView.layer.shadowRadius = 4.0
         bgCardView.layer.cornerRadius = 10.0
@@ -44,10 +43,4 @@ class BannerViewCollectionViewCell: UICollectionViewCell {
 
 
 
-extension UIView {
-    func roundCorners(radius: CGFloat) {
-        self.clipsToBounds = true
-        self.layer.cornerRadius = radius
-        self.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-    }
-}
+
