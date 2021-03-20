@@ -9,11 +9,7 @@ import UIKit
 
 
 class FoodieLandingView: UIViewController, AbstractFoodieLandingView {
-    lazy var mainView = UIView()
-    override func loadView() {
-        self.view = mainView
-    }
-    
+    @IBOutlet weak var foodieTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red

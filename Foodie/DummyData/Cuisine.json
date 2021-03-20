@@ -1,0 +1,28 @@
+[
+  {
+    "id": "1",
+    "name": "Indian",
+    "image" : "https://www.blueosa.com/wp-content/uploads/2020/01/the-best-top-10-indian-dishes.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Italian",
+    "image" : "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2015/8/7/1/FN_Italian-Favorites-Opener_s4x3.jpg.rend.hgtvcom.616.462.suffix/1438990067345.jpeg"
+  },
+  {
+    "id": "3",
+    "name": "Chinese",
+    "image" : "https://asiasociety.org/files/160802_chinese_food.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Russian",
+    "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJv25RpSyVYj_R6I_Ggv5nRJoWZbtaYMfctg&usqp=CAU"
+  },
+  {
+    "id": "5",
+    "name": "Mexican",
+    "image" : "https://hips.hearstapps.com/delish/assets/17/41/1507827432-beef-taco-boats-delish-1.jpg"
+  }
+  
+]

@@ -17,6 +17,12 @@
 		58560D112600E61900267341 /* FoodieLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58560D102600E61900267341 /* FoodieLandingView.swift */; };
 		58560D222600E81600267341 /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58560D212600E81600267341 /* Configurator.swift */; };
 		58560D272600E95200267341 /* FoodieLandingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58560D262600E95200267341 /* FoodieLandingProtocols.swift */; };
+		58D1A58526059F4B008BD3C2 /* FoodieLandingViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A58426059F4B008BD3C2 /* FoodieLandingViewPresenter.swift */; };
+		58D1A58A26059FDA008BD3C2 /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A58926059FDA008BD3C2 /* ViewModels.swift */; };
+		58D1A5962605AAF8008BD3C2 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A5952605AAF8008BD3C2 /* Entities.swift */; };
+		58D1A59C2605AB38008BD3C2 /* FoodieCuisineWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A59B2605AB38008BD3C2 /* FoodieCuisineWorker.swift */; };
+		58D1A5A22605AD39008BD3C2 /* Cuisine.json in Resources */ = {isa = PBXBuildFile; fileRef = 58D1A5A12605AD39008BD3C2 /* Cuisine.json */; };
+		58D1A5AD2605D9F0008BD3C2 /* FoodieLandingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58D1A5AC2605D9F0008BD3C2 /* FoodieLandingView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,12 @@
 		58560D102600E61900267341 /* FoodieLandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieLandingView.swift; sourceTree = "<group>"; };
 		58560D212600E81600267341 /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		58560D262600E95200267341 /* FoodieLandingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieLandingProtocols.swift; sourceTree = "<group>"; };
+		58D1A58426059F4B008BD3C2 /* FoodieLandingViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieLandingViewPresenter.swift; sourceTree = "<group>"; };
+		58D1A58926059FDA008BD3C2 /* ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
+		58D1A5952605AAF8008BD3C2 /* Entities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
+		58D1A59B2605AB38008BD3C2 /* FoodieCuisineWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieCuisineWorker.swift; sourceTree = "<group>"; };
+		58D1A5A12605AD39008BD3C2 /* Cuisine.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Cuisine.json; sourceTree = "<group>"; };
+		58D1A5AC2605D9F0008BD3C2 /* FoodieLandingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodieLandingView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +115,9 @@
 		58560CD72600E4E900267341 /* Foodie */ = {
 			isa = PBXGroup;
 			children = (
+				58D1A5A02605AD13008BD3C2 /* DummyData */,
+				58D1A59A2605AAFD008BD3C2 /* MicroServices */,
+				58D1A5942605AAF8008BD3C2 /* Domian */,
 				58560D0E2600E5D900267341 /* Scenes */,
 				58560CD82600E4E900267341 /* AppDelegate.swift */,
 				58560CDA2600E4E900267341 /* SceneDelegate.swift */,
@@ -146,8 +161,35 @@
 			children = (
 				58560D102600E61900267341 /* FoodieLandingView.swift */,
 				58560D262600E95200267341 /* FoodieLandingProtocols.swift */,
+				58D1A58426059F4B008BD3C2 /* FoodieLandingViewPresenter.swift */,
+				58D1A58926059FDA008BD3C2 /* ViewModels.swift */,
+				58D1A5AC2605D9F0008BD3C2 /* FoodieLandingView.xib */,
 			);
 			path = HomePage;
+			sourceTree = "<group>";
+		};
+		58D1A5942605AAF8008BD3C2 /* Domian */ = {
+			isa = PBXGroup;
+			children = (
+				58D1A5952605AAF8008BD3C2 /* Entities.swift */,
+			);
+			path = Domian;
+			sourceTree = "<group>";
+		};
+		58D1A59A2605AAFD008BD3C2 /* MicroServices */ = {
+			isa = PBXGroup;
+			children = (
+				58D1A59B2605AB38008BD3C2 /* FoodieCuisineWorker.swift */,
+			);
+			path = MicroServices;
+			sourceTree = "<group>";
+		};
+		58D1A5A02605AD13008BD3C2 /* DummyData */ = {
+			isa = PBXGroup;
+			children = (
+				58D1A5A12605AD39008BD3C2 /* Cuisine.json */,
+			);
+			path = DummyData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,8 +295,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58D1A5AD2605D9F0008BD3C2 /* FoodieLandingView.xib in Resources */,
 				58560CE52600E4EA00267341 /* LaunchScreen.storyboard in Resources */,
 				58560CE22600E4EA00267341 /* Assets.xcassets in Resources */,
+				58D1A5A22605AD39008BD3C2 /* Cuisine.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,9 +325,13 @@
 			files = (
 				58560CDD2600E4E900267341 /* ViewController.swift in Sources */,
 				58560CD92600E4E900267341 /* AppDelegate.swift in Sources */,
+				58D1A58A26059FDA008BD3C2 /* ViewModels.swift in Sources */,
+				58D1A58526059F4B008BD3C2 /* FoodieLandingViewPresenter.swift in Sources */,
 				58560D112600E61900267341 /* FoodieLandingView.swift in Sources */,
 				58560D222600E81600267341 /* Configurator.swift in Sources */,
+				58D1A5962605AAF8008BD3C2 /* Entities.swift in Sources */,
 				58560CDB2600E4E900267341 /* SceneDelegate.swift in Sources */,
+				58D1A59C2605AB38008BD3C2 /* FoodieCuisineWorker.swift in Sources */,
 				58560D272600E95200267341 /* FoodieLandingProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

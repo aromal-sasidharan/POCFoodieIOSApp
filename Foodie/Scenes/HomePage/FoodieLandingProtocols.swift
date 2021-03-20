@@ -39,3 +39,12 @@ protocol AbstractDishesInteractor {
 protocol AbstractFoodieLandingInteractor {
     var presenterInput: AbstractFoodieLandingPresenterInput? {get set}
 }
+
+protocol AbstractFoodieCuisineWorker {
+    var output: AbstractFoodieCuisineWorkerOutput? {get set}
+    func loadCuisines()
+}
+
+protocol AbstractFoodieCuisineWorkerOutput {
+    func onLoadCuisines(result: Result<Entities.Cuisine, Error>)
+}
