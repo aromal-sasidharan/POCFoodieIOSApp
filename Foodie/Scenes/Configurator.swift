@@ -35,4 +35,9 @@ class FoodieConfigurator {
         return view
     }
     
+    func createCartView() -> UIViewController {
+        let view = CartView()
+        return view
+    }
+    
 }

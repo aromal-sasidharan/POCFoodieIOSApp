@@ -9,6 +9,7 @@ import UIKit
 
 protocol AbstractFoodieLandingViewRouter {
     func routeToDishList(from: AbstractFoodieLandingView?, withCuisineId: String)
+    func routeToCartView(from: AbstractFoodieLandingView?)
 }
 protocol AbstractFoodieLandingView: UIViewController {
     
@@ -29,6 +30,7 @@ protocol AbstractFoodieLandingViewOutput {
     func totalRowsForSection(_ section: Int) -> Int
     func setBannerView(view: AbstractBannerCollectionView)
     func dishViewModel(indexPath: IndexPath) -> AbstractDishViewModel? 
+    func navigateCartView()
 }
 
 protocol AbstractFoodieLandingInteractorOutput {
