@@ -10,6 +10,9 @@ import UIKit
 class BannerViewCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var nameLable: UILabel!
+    @IBOutlet weak var labelViewBg: UIView!
+    @IBOutlet weak var bgCardView: UIView!
+    
     class var identifier: String {
         String(describing: Self.self)
     }
@@ -17,6 +20,26 @@ class BannerViewCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         image.image = UIImage(named: "cuisine-sample")
         nameLable.text = "Test"
+        setupViews()
     }
     
+    func setupViews() {
+        labelViewBg.roundCorners(radius: 10.0)
+        bgCardView.layer.shadowColor = UIColor.lightGray.cgColor
+        bgCardView.layer.shadowRadius = 4.0
+        bgCardView.layer.cornerRadius = 10.0
+        image.layer.cornerRadius = 10.0
+        bgCardView.layer.shadowOpacity = 1.0;
+        bgCardView.layer.shadowOffset = CGSize(width: 1, height: 1)
+    }
+}
+
+
+
+extension UIView {
+    func roundCorners(radius: CGFloat) {
+        self.clipsToBounds = true
+        self.layer.cornerRadius = radius
+        self.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+    }
 }

@@ -12,7 +12,6 @@ class FoodieLandingView: UIViewController, AbstractFoodieLandingView {
     @IBOutlet weak var foodieTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
         setupTableView()
     }
 }

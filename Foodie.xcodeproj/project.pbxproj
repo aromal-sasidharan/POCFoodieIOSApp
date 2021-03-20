@@ -29,6 +29,9 @@
 		58D1A5CA2605E23A008BD3C2 /* BannerViewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58D1A5C92605E23A008BD3C2 /* BannerViewCollectionViewCell.xib */; };
 		58D1A5D02605E462008BD3C2 /* DishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A5CE2605E462008BD3C2 /* DishTableViewCell.swift */; };
 		58D1A5D12605E462008BD3C2 /* DishTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58D1A5CF2605E462008BD3C2 /* DishTableViewCell.xib */; };
+		D3B540622605EAB700B90631 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B5405F2605EAB700B90631 /* Poppins-ExtraLight.ttf */; };
+		D3B540632605EAB700B90631 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B540602605EAB700B90631 /* Poppins-Medium.ttf */; };
+		D3B540642605EAB700B90631 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B540612605EAB700B90631 /* Poppins-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		58D1A5C92605E23A008BD3C2 /* BannerViewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerViewCollectionViewCell.xib; sourceTree = "<group>"; };
 		58D1A5CE2605E462008BD3C2 /* DishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishTableViewCell.swift; sourceTree = "<group>"; };
 		58D1A5CF2605E462008BD3C2 /* DishTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishTableViewCell.xib; sourceTree = "<group>"; };
+		D3B5405F2605EAB700B90631 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		D3B540602605EAB700B90631 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		D3B540612605EAB700B90631 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,7 @@
 				58560CE12600E4EA00267341 /* Assets.xcassets */,
 				58560CE32600E4EA00267341 /* LaunchScreen.storyboard */,
 				58560CE62600E4EA00267341 /* Info.plist */,
+				D3B5405E2605EAB700B90631 /* Fonts */,
 			);
 			path = Foodie;
 			sourceTree = "<group>";
@@ -216,6 +223,16 @@
 				58D1A5CF2605E462008BD3C2 /* DishTableViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D3B5405E2605EAB700B90631 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D3B5405F2605EAB700B90631 /* Poppins-ExtraLight.ttf */,
+				D3B540602605EAB700B90631 /* Poppins-Medium.ttf */,
+				D3B540612605EAB700B90631 /* Poppins-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,9 +342,12 @@
 				58D1A5AD2605D9F0008BD3C2 /* FoodieLandingView.xib in Resources */,
 				58D1A5CA2605E23A008BD3C2 /* BannerViewCollectionViewCell.xib in Resources */,
 				58560CE52600E4EA00267341 /* LaunchScreen.storyboard in Resources */,
+				D3B540622605EAB700B90631 /* Poppins-ExtraLight.ttf in Resources */,
 				58D1A5D12605E462008BD3C2 /* DishTableViewCell.xib in Resources */,
+				D3B540632605EAB700B90631 /* Poppins-Medium.ttf in Resources */,
 				58560CE22600E4EA00267341 /* Assets.xcassets in Resources */,
 				58D1A5A22605AD39008BD3C2 /* Cuisine.json in Resources */,
+				D3B540642605EAB700B90631 /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
