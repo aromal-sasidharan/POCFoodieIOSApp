@@ -29,6 +29,13 @@
 		58D1A5CA2605E23A008BD3C2 /* BannerViewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58D1A5C92605E23A008BD3C2 /* BannerViewCollectionViewCell.xib */; };
 		58D1A5D02605E462008BD3C2 /* DishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A5CE2605E462008BD3C2 /* DishTableViewCell.swift */; };
 		58D1A5D12605E462008BD3C2 /* DishTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58D1A5CF2605E462008BD3C2 /* DishTableViewCell.xib */; };
+		58D1A5DA2605E811008BD3C2 /* DishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A5D92605E811008BD3C2 /* DishListView.swift */; };
+		58D1A5DF2605E846008BD3C2 /* DishListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58D1A5DE2605E846008BD3C2 /* DishListView.xib */; };
+		58D1A5E52605E916008BD3C2 /* FoodieLandingViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A5E42605E916008BD3C2 /* FoodieLandingViewRouter.swift */; };
+		58D1A5EB2605ED5F008BD3C2 /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A5EA2605ED5F008BD3C2 /* UIImageView+Download.swift */; };
+		58D1A5F32605FB33008BD3C2 /* Bundle+JsonResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A5F22605FB33008BD3C2 /* Bundle+JsonResource.swift */; };
+		58D1A5F82605FC64008BD3C2 /* FoodieLandingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A5F72605FC64008BD3C2 /* FoodieLandingInteractor.swift */; };
+		58D1A5FD2605FF5D008BD3C2 /* Collection+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A5FC2605FF5D008BD3C2 /* Collection+Subscript.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +84,13 @@
 		58D1A5C92605E23A008BD3C2 /* BannerViewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerViewCollectionViewCell.xib; sourceTree = "<group>"; };
 		58D1A5CE2605E462008BD3C2 /* DishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishTableViewCell.swift; sourceTree = "<group>"; };
 		58D1A5CF2605E462008BD3C2 /* DishTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishTableViewCell.xib; sourceTree = "<group>"; };
+		58D1A5D92605E811008BD3C2 /* DishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListView.swift; sourceTree = "<group>"; };
+		58D1A5DE2605E846008BD3C2 /* DishListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishListView.xib; sourceTree = "<group>"; };
+		58D1A5E42605E916008BD3C2 /* FoodieLandingViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieLandingViewRouter.swift; sourceTree = "<group>"; };
+		58D1A5EA2605ED5F008BD3C2 /* UIImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
+		58D1A5F22605FB33008BD3C2 /* Bundle+JsonResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+JsonResource.swift"; sourceTree = "<group>"; };
+		58D1A5F72605FC64008BD3C2 /* FoodieLandingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieLandingInteractor.swift; sourceTree = "<group>"; };
+		58D1A5FC2605FF5D008BD3C2 /* Collection+Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Subscript.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +141,7 @@
 		58560CD72600E4E900267341 /* Foodie */ = {
 			isa = PBXGroup;
 			children = (
+				58D1A5E92605ED46008BD3C2 /* Extensions */,
 				58D1A5A02605AD13008BD3C2 /* DummyData */,
 				58D1A59A2605AAFD008BD3C2 /* MicroServices */,
 				58D1A5942605AAF8008BD3C2 /* Domian */,
@@ -162,23 +177,26 @@
 		58560D0E2600E5D900267341 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				58560D0F2600E5E100267341 /* HomePage */,
+				58D1A5D52605E7BB008BD3C2 /* DishList */,
+				58560D0F2600E5E100267341 /* FoodieLanding */,
 				58560D212600E81600267341 /* Configurator.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		58560D0F2600E5E100267341 /* HomePage */ = {
+		58560D0F2600E5E100267341 /* FoodieLanding */ = {
 			isa = PBXGroup;
 			children = (
+				58D1A5E32605E89E008BD3C2 /* ViewModels */,
 				58D1A5B12605DC6B008BD3C2 /* Views */,
 				58560D102600E61900267341 /* FoodieLandingView.swift */,
 				58560D262600E95200267341 /* FoodieLandingProtocols.swift */,
 				58D1A58426059F4B008BD3C2 /* FoodieLandingViewPresenter.swift */,
-				58D1A58926059FDA008BD3C2 /* ViewModels.swift */,
 				58D1A5AC2605D9F0008BD3C2 /* FoodieLandingView.xib */,
+				58D1A5E42605E916008BD3C2 /* FoodieLandingViewRouter.swift */,
+				58D1A5F72605FC64008BD3C2 /* FoodieLandingInteractor.swift */,
 			);
-			path = HomePage;
+			path = FoodieLanding;
 			sourceTree = "<group>";
 		};
 		58D1A5942605AAF8008BD3C2 /* Domian */ = {
@@ -216,6 +234,33 @@
 				58D1A5CF2605E462008BD3C2 /* DishTableViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		58D1A5D52605E7BB008BD3C2 /* DishList */ = {
+			isa = PBXGroup;
+			children = (
+				58D1A5D92605E811008BD3C2 /* DishListView.swift */,
+				58D1A5DE2605E846008BD3C2 /* DishListView.xib */,
+			);
+			path = DishList;
+			sourceTree = "<group>";
+		};
+		58D1A5E32605E89E008BD3C2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				58D1A58926059FDA008BD3C2 /* ViewModels.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		58D1A5E92605ED46008BD3C2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				58D1A5EA2605ED5F008BD3C2 /* UIImageView+Download.swift */,
+				58D1A5F22605FB33008BD3C2 /* Bundle+JsonResource.swift */,
+				58D1A5FC2605FF5D008BD3C2 /* Collection+Subscript.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +366,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58D1A5DF2605E846008BD3C2 /* DishListView.xib in Resources */,
 				58D1A5B32605DC7F008BD3C2 /* BannerTableViewCell.xib in Resources */,
 				58D1A5AD2605D9F0008BD3C2 /* FoodieLandingView.xib in Resources */,
 				58D1A5CA2605E23A008BD3C2 /* BannerViewCollectionViewCell.xib in Resources */,
@@ -354,17 +400,23 @@
 			files = (
 				58D1A5B82605DCEC008BD3C2 /* BannerTableViewCell.swift in Sources */,
 				58D1A5D02605E462008BD3C2 /* DishTableViewCell.swift in Sources */,
+				58D1A5F82605FC64008BD3C2 /* FoodieLandingInteractor.swift in Sources */,
 				58560CDD2600E4E900267341 /* ViewController.swift in Sources */,
 				58560CD92600E4E900267341 /* AppDelegate.swift in Sources */,
+				58D1A5EB2605ED5F008BD3C2 /* UIImageView+Download.swift in Sources */,
 				58D1A58A26059FDA008BD3C2 /* ViewModels.swift in Sources */,
 				58D1A58526059F4B008BD3C2 /* FoodieLandingViewPresenter.swift in Sources */,
 				58560D112600E61900267341 /* FoodieLandingView.swift in Sources */,
 				58D1A5BD2605DD8D008BD3C2 /* BannerCollectionViewCell.swift in Sources */,
+				58D1A5FD2605FF5D008BD3C2 /* Collection+Subscript.swift in Sources */,
 				58560D222600E81600267341 /* Configurator.swift in Sources */,
+				58D1A5F32605FB33008BD3C2 /* Bundle+JsonResource.swift in Sources */,
 				58D1A5962605AAF8008BD3C2 /* Entities.swift in Sources */,
+				58D1A5DA2605E811008BD3C2 /* DishListView.swift in Sources */,
 				58560CDB2600E4E900267341 /* SceneDelegate.swift in Sources */,
 				58D1A59C2605AB38008BD3C2 /* FoodieCuisineWorker.swift in Sources */,
 				58560D272600E95200267341 /* FoodieLandingProtocols.swift in Sources */,
+				58D1A5E52605E916008BD3C2 /* FoodieLandingViewRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

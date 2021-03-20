@@ -9,11 +9,14 @@ import UIKit
 
 
 class FoodieLandingView: UIViewController, AbstractFoodieLandingView {
+    var presenter: AbstractFoodieLandingViewOutput?
+    
     @IBOutlet weak var foodieTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
         setupTableView()
+        presenter?.viewDidLoad()
     }
 }
 extension FoodieLandingView {
@@ -38,31 +41,29 @@ extension FoodieLandingView {
     }
 }
 extension FoodieLandingView {
-    func loadDishes() {
-        
-    }
-    func loadCuisines() {
-        
+    func loadDataForSection(section: Int?) {
+        print("☣️ loading table", section)
+        guard let section = section else {
+            return self.foodieTableView.reloadData()
+        }
+        self.foodieTableView.reloadSections([section], with: .automatic)
     }
 }
 extension FoodieLandingView: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        2
+        presenter?.totalSections() ?? 0
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 1
-        case 1:
-            return 10
-        default:
-            return 0
-        }
+        presenter?.totalRowsForSection(section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("☣️ cellForRowAt ", indexPath.section)
         if let cell = tableView.dequeueReusableCell(withIdentifier: BannerTableViewCell.identifier, for: indexPath) as? BannerTableViewCell, indexPath.section == 0 {
-            
+            cell.input = presenter as? AbstractBannerCollectionViewInput
+            cell.output = presenter as? AbstractBannerCollectionViewOutput
+            print("☣️ Banner cell")
+            presenter?.setBannerView(view: cell)
             return cell
         }
         else if let cell = tableView.dequeueReusableCell(withIdentifier: DishTableViewCell.identifier, for: indexPath) as? DishTableViewCell, indexPath.section == 1 {

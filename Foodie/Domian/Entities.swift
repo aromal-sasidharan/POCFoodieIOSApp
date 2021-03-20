@@ -12,7 +12,7 @@ protocol AbstractCuisine {
     var imageUrl: String? {get set}
 }
 public enum Entities {
-    public struct Cuisine: AbstractCuisine {
+    public struct Cuisine: AbstractCuisine, Codable {
         var id: String?
         
         var name: String?
