@@ -81,6 +81,11 @@ extension FoodieLandingViewPresenter: AbstractFoodieLandingViewOutput {
     func viewDidLoad() {
         interactor?.loadAllCuisines()
     }
+    func viewDidReload() {
+        if totalRowsForSection(1) > 0 {
+            self.view?.loadDataForSection(section: 1)
+        }
+    }
     func setBannerView(view: AbstractBannerCollectionView) {
         view.reload()
     }

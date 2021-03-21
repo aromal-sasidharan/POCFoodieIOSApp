@@ -30,6 +30,7 @@ protocol AbstractFoodieLandingPresenter: AbstractFoodieLandingViewOutput, Abstra
 
 protocol AbstractFoodieLandingViewOutput {
     func viewDidLoad()
+    func viewDidReload()
     func totalSections() -> Int
     func totalRowsForSection(_ section: Int) -> Int
     func setBannerView(view: AbstractBannerCollectionView)
