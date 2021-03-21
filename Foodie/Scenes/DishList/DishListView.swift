@@ -17,19 +17,13 @@ class DishListView: UIViewController, AbstractDishListView {
         super.viewDidLoad()
         navigationBtnSetup()
         registerTableView()
-        navigationBtn()
         presenter?.viewDidLoad()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         presenter?.viewDidReload()
     }
-    func navigationBtn() {
-        self.navigationItem.rightBarButtonItem = barBtn.shared
-        barBtn.shared.tapAction = {
-            self.presenter?.navigateCartView()
-        }
-    }
+  
     func loadDataForSection(section: Int?) {
         guard let section = section else {
             return self.tableView.reloadData()
@@ -43,6 +37,7 @@ class DishListView: UIViewController, AbstractDishListView {
         self.tableView.reloadRows(at: [[section,row]], with: .none)
     }
     func navigationBtnSetup() {
+        self.title = "Cusine List"
         self.navigationItem.rightBarButtonItem = notificationButton
         notificationButton.tapAction = {
             self.presenter?.navigateCartView()

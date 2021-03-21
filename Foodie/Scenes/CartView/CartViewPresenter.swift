@@ -53,6 +53,11 @@ class CartViewPresenter: AbstractCartViewPresenter  {
     }
     
     private func updateTotals() {
+        guard let cartCount = cartSession?.cartCount(), cartCount > 0 else {
+            cartView?.reloadTotal(vm: nil)
+            return
+        }
+        
         let subtotal = cartSession?.totalPriceOfItems() ?? 0.0
         let cgst = ((subtotal * 2.5) / 100.0)
         let sgst = ((subtotal * 2.5) / 100.0)

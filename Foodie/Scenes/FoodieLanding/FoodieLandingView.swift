@@ -25,6 +25,7 @@ class FoodieLandingView: UIViewController, AbstractFoodieLandingView {
     }
     
     func navigationBtnSetup() {
+        self.title = "Foodie"
         self.navigationItem.rightBarButtonItem = notificationButton
         notificationButton.tapAction = {
             self.presenter?.navigateCartView()

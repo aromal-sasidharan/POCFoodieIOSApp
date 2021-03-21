@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         /// 3. Create a view hierarchy programmatically
         let viewController = FoodieConfigurator.shared.createLandingView()
         let navigation = UINavigationController(rootViewController: viewController)
-        
+        navigation.navigationBar.tintColor = #colorLiteral(red: 0.9098039216, green: 0.2990662754, blue: 0.3113375306, alpha: 1)
         /// 4. Set the root view controller of the window with your view controller
         window.rootViewController = navigation
         

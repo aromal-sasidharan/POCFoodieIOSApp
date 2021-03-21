@@ -40,6 +40,7 @@ class CartTotalView: UIView {
 
     
     func configure(vm: AbstractCartTotalViewModel?) {
+        self.isHidden = vm == nil
         labelSGST.text = vm?.sgst ?? "0"
         labelCGST.text = vm?.cgst ?? "0"
         labelTotal.text = vm?.total ?? "0"

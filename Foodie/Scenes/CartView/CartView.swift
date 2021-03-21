@@ -19,6 +19,7 @@ class CartView: UIViewController, AbstractCartView {
     var presenter: AbstractCartViewPresenter?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Cart"
         cartTableView.delegate = self
         cartTableView.dataSource = self
         registerTableView()
