@@ -17,17 +17,18 @@ protocol AbstractBannerCollectionViewInput {
 }
 extension AbstractBannerCollectionViewInput {
     var inifiniteScrollConstant: Int {
-        return 1
+        return 1000
     }
     func modelForIndexPath(indexPath: IndexPath) -> AbstractCuisineViewModel? {
-//        let size = numberOfCusines() ?? 1
-//        let index = indexPath.row % size
-        return modelForIndexPath(index: indexPath.row)
+        let size = numberOfCusines() ?? 1
+        let index = indexPath.row % size
+        return modelForIndexPath(index: index)
     }
-//    func infiniteCount() -> Int {
-//        return (inifiniteScrollConstant) * (numberOfCusines() ?? 0)
-//        return (inifiniteScrollConstant) * (numberOfCusines() ?? 0)
-//    }
+    func infiniteCount() -> Int {
+        let count = (inifiniteScrollConstant) * (numberOfCusines() ?? 0)
+        return count
+//        return numberOfCusines() ?? 0
+    }
 }
 
 protocol AbstractBannerCollectionView: UIView {
@@ -63,9 +64,13 @@ class BannerTableViewCell: UITableViewCell {
 extension BannerTableViewCell: AbstractBannerCollectionView {
     func reload() {
         self.bannerCollectionView.reloadData()
-//        if let count = input?.infiniteCount() {
-////            self.bannerCollectionView.scrollToItem(at: [0,count/2], at: .centeredHorizontally, animated: false)
-//        }
+        if let count = input?.infiniteCount() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                let row = count / 2
+                print("row is", row)
+                self.bannerCollectionView.scrollToItem(at: [0,row], at: .centeredHorizontally, animated: false)
+            }
+        }
         
     }
 }
@@ -83,7 +88,7 @@ extension BannerTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         return bannerCollectionView.indexPathForItem(at: center)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let count = input?.numberOfCusines() {
+        if let count = input?.infiniteCount() {
             return count
         }
         return 0

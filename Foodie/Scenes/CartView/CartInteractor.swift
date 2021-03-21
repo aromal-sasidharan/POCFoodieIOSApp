@@ -89,6 +89,9 @@ class CartSessionInteractor: AbstractCartSessionInteractor  {
         }
         var item = item
         item.quantiy = item.quantiy - 1
+        if item.quantiy == 0 {
+            return nil
+        }
         return item
     }
     func allItems() -> [AbstractCartItem] {
