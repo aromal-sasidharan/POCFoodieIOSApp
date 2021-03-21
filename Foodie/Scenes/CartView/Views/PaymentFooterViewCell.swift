@@ -2,7 +2,7 @@
 //  PaymentFooterViewCell.swift
 //  Foodie
 //
-//  Created by mahesh.varadara on 20/3/21.
+//  Created by Aromal Sasidharan on 20/3/21.
 //
 
 import UIKit
