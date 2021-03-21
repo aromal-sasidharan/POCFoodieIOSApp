@@ -70,8 +70,11 @@ class DishTableViewCell: UITableViewCell {
         }
         if isCart {
             self.buttonCart.isHidden = true
-            self.viewPlusMinus.isHidden = true
+            self.buttonPlus.isHidden = true
+            self.buttonMinus.isHidden = true
             self.ratingLabel.isHidden = true
+//            self.quantityLabel.text = "X \(self.quantityLabel.text)"
+            self.viewPlusMinus.backgroundColor = .clear
         }
         
     }

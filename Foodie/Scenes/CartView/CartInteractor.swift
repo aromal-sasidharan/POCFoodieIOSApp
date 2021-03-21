@@ -17,6 +17,7 @@ protocol AbstractCartSessionInteractor {
     func subscribeForCartNotication(identifier: String, notifier: AbstractCartCountNotifier?)
     func removeDish(dish: Entities.Dish)
     func allItems() -> [AbstractCartItem]
+    func totalPriceOfItems() -> Double
     func clearCart()
     
 }
@@ -95,5 +96,10 @@ class CartSessionInteractor: AbstractCartSessionInteractor  {
     }
     func allItems() -> [AbstractCartItem] {
         return cart
+    }
+    
+    func totalPriceOfItems() -> Double {
+        let total = cart.map({Double($0.quantiy) * ($0.dish.price ?? 1.0)}).reduce(0, +)
+        return total
     }
 }

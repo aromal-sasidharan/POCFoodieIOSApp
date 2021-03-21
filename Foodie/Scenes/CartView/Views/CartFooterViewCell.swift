@@ -36,6 +36,14 @@ class CartFooterViewCell: UITableViewHeaderFooterView {
 //            bottomConstraint.constant = 0
 //        }
     }
+    
+    func configure(vm: AbstractCartTotalViewModel?) {
+        labelSGST.text = vm?.sgst ?? "0"
+        labelCGST.text = vm?.cgst ?? "0"
+        labelTotal.text = vm?.total ?? "0"
+        labelSubTotal.text = vm?.subtotal ?? "0"
+    }
+    
 }
 
 

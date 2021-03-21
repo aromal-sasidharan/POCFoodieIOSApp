@@ -43,6 +43,7 @@
 		58D1A644260666F7008BD3C2 /* UIVIew+RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A643260666F7008BD3C2 /* UIVIew+RoundedCorners.swift */; };
 		58D1A6492606D06B008BD3C2 /* CartViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A6482606D06A008BD3C2 /* CartViewPresenter.swift */; };
 		58D1A64E2606D21E008BD3C2 /* DishesListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A64D2606D21E008BD3C2 /* DishesListProtocol.swift */; };
+		58D1A6562606EDEA008BD3C2 /* Double+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A6552606EDEA008BD3C2 /* Double+Rounded.swift */; };
 		D37D9159260615E7004F5B44 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37D9158260615E7004F5B44 /* Media.xcassets */; };
 		D37D91622606179B004F5B44 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D91612606179B004F5B44 /* CartView.swift */; };
 		D37D9167260617B1004F5B44 /* CartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D37D9166260617B1004F5B44 /* CartView.xib */; };
@@ -115,6 +116,7 @@
 		58D1A643260666F7008BD3C2 /* UIVIew+RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+RoundedCorners.swift"; sourceTree = "<group>"; };
 		58D1A6482606D06A008BD3C2 /* CartViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewPresenter.swift; sourceTree = "<group>"; };
 		58D1A64D2606D21E008BD3C2 /* DishesListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesListProtocol.swift; sourceTree = "<group>"; };
+		58D1A6552606EDEA008BD3C2 /* Double+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Rounded.swift"; sourceTree = "<group>"; };
 		D37D9158260615E7004F5B44 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		D37D91612606179B004F5B44 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		D37D9166260617B1004F5B44 /* CartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartView.xib; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				58D1A61626060E11008BD3C2 /* UIImageView+Download.swift */,
 				D37D916D2606231D004F5B44 /* NotificationBarButton.swift */,
 				58D1A643260666F7008BD3C2 /* UIVIew+RoundedCorners.swift */,
+				58D1A6552606EDEA008BD3C2 /* Double+Rounded.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				58D1A5B82605DCEC008BD3C2 /* BannerTableViewCell.swift in Sources */,
 				58D1A5D02605E462008BD3C2 /* DishTableViewCell.swift in Sources */,
 				58D1A5F82605FC64008BD3C2 /* FoodieLandingInteractor.swift in Sources */,
+				58D1A6562606EDEA008BD3C2 /* Double+Rounded.swift in Sources */,
 				58560CDD2600E4E900267341 /* ViewController.swift in Sources */,
 				58560CD92600E4E900267341 /* AppDelegate.swift in Sources */,
 				58D1A58A26059FDA008BD3C2 /* ViewModels.swift in Sources */,
