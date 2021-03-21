@@ -18,8 +18,6 @@ class BannerViewCollectionViewCell: UICollectionViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-//        image.image = UIImage(named: "cuisine-sample")
-        nameLable.text = "Test"
         setupViews()
     }
     

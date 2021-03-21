@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CartView" customModule="Foodie" customModuleProvider="target">
             <connections>
+                <outlet property="cartTableView" destination="Np8-L0-uVw" id="LIF-aE-BR5"/>
                 <outlet property="view" destination="iN0-l3-epB" id="bM7-gE-to8"/>
             </connections>
         </placeholder>
@@ -17,8 +18,24 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="cart">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Np8-L0-uVw">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="IwH-xf-0z7"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="xsf-nk-zaH"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Np8-L0-uVw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="2MF-zO-Ggu"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Np8-L0-uVw" secondAttribute="trailing" id="PGG-ku-mrN"/>
+                <constraint firstItem="Np8-L0-uVw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ZiF-qW-PC5"/>
+                <constraint firstAttribute="bottom" secondItem="Np8-L0-uVw" secondAttribute="bottom" id="jcd-oG-0pw"/>
+            </constraints>
             <point key="canvasLocation" x="-197" y="52"/>
         </view>
     </objects>

@@ -72,6 +72,7 @@ public class NotificationBarButton: UIBarButtonItem {
         self.lblBadge.backgroundColor = #colorLiteral(red: 0.9727552533, green: 0.9606756568, blue: 0.9488486648, alpha: 1)
         self.lblBadge.clipsToBounds = true
         self.lblBadge.textColor = #colorLiteral(red: 0.9098039216, green: 0.2980392157, blue: 0.3098039216, alpha: 1)
+        self.lblBadge.isHidden = true
         self.lblBadge.layer.borderWidth = 1.0
         self.lblBadge.layer.cornerRadius = 10.0
         self.lblBadge.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1).cgColor

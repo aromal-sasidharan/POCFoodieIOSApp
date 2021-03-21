@@ -27,18 +27,14 @@ class DishesPresenter: AbstractDishesPresenter {
         viewModels.count
     }
     func onLoadDishes(dishes: [Entities.Dish]) {
-        let vms: [AbstractDishViewModel] = dishes
-            .map({CuisineDishViewModel
-                    .create(entity: $0)})
-            .compactMap({$0})
-        
+        let vms: [AbstractDishViewModel] = dishes.map({CuisineDishViewModel.create(entity: $0)}).compactMap({$0})
         self.viewModels.removeAll()
         self.viewModels.append(contentsOf: vms)
         self.output?.onDishesUpdated()
     }
     
-    func loadDishForCuisine(cuisineId: String) {
-        interactor?.loadCuisineDishes(cuisineId: cuisineId)
+    func loadDishForCuisine(cuisineId: String, limit: Int) {
+        interactor?.loadCuisineDishes(cuisineId: cuisineId, limit: limit)
     }
     
 }

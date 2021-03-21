@@ -25,6 +25,7 @@ protocol AbstractFoodieLandingPresenter: AbstractFoodieLandingViewOutput, Abstra
     var interactor: AbstractFoodieLandingInteractor? {get set}
     var dishesPresenter: AbstractDishesPresenter? {get set}
     var cartSession: AbstractCartSessionInteractor? {get set}
+    
 }
 
 protocol AbstractFoodieLandingViewOutput {
@@ -45,7 +46,7 @@ protocol AbstractDishesPresenter: AbstractDishesInteractorOutput {
     var output: AbstractDishListPresenterOutput? {get set}
     var interactor: AbstractDishesInteractor? {get set}
     var cartSession: AbstractCartSessionInteractor? {get set}
-    func loadDishForCuisine(cuisineId: String)
+    func loadDishForCuisine(cuisineId: String, limit: Int)
     func dishViewModelFor(index: Int) -> AbstractDishViewModel?
     func numberOfDishes() -> Int
 }
@@ -57,7 +58,7 @@ protocol AbstractDishesInteractorOutput {
 protocol AbstractDishesInteractor {
     var dishesWorker: AbstractDishesWorker? {get set}
     var ouput: AbstractDishesInteractorOutput? {get set}
-    func loadCuisineDishes(cuisineId: String)
+    func loadCuisineDishes(cuisineId: String, limit: Int)
 }
 
 protocol AbstractFoodieLandingInteractor {

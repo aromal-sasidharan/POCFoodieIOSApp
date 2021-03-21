@@ -45,7 +45,7 @@ extension FoodieLandingViewPresenter: AbstractFoodieLandingInteractorOutput {
         self.viewModels.append(contentsOf: vms)
         self.view?.loadDataForSection(section: 0)
         if let firstCuisine = entities[safe: 0], let cuisineId = firstCuisine.id {
-            dishesPresenter?.loadDishForCuisine(cuisineId: cuisineId)
+            dishesPresenter?.loadDishForCuisine(cuisineId: cuisineId, limit: 3)
         }
         
     }
@@ -101,7 +101,7 @@ extension FoodieLandingViewPresenter: AbstractBannerCollectionViewOutput {
     }
     func didSwipeToCuisine(vm: AbstractCuisineViewModel) {
         if let cuisine = vm.entity, let cuisineId = cuisine.id {
-            dishesPresenter?.loadDishForCuisine(cuisineId: cuisineId)
+            dishesPresenter?.loadDishForCuisine(cuisineId: cuisineId, limit: 3)
         }
     }
 }

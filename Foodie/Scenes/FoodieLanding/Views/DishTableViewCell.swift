@@ -25,6 +25,8 @@ class DishTableViewCell: UITableViewCell {
     @IBOutlet weak var buttonPlus: UIButton!
     @IBOutlet weak var buttonMinus: UIButton!
     @IBOutlet weak var buttonCart: UIButton!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
     class var identifier: String {
         String(describing: Self.self)
     }
@@ -61,6 +63,7 @@ class DishTableViewCell: UITableViewCell {
         self.quantityLabel.text = vm?.quantity ?? "0"
         self.buttonCart.isHidden = (vm?.canShowIncrementor == true)
         self.viewPlusMinus.isHidden = (vm?.canShowIncrementor == true) == false
+        self.ratingLabel.text = vm?.rating ?? "1.0"
         self.priceLabel.text = vm?.price ?? "0.0"
         if let url = vm?.imageUrl {
             self.dishImageView.downloaded(from: url, contentMode: .scaleToFill)

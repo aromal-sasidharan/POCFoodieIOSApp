@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -47,39 +48,46 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZG-4k-9Fn">
-                                <rect key="frame" x="98" y="71.5" width="110" height="20"/>
+                                <rect key="frame" x="98" y="71.5" width="49" height="21"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="BLc-xx-buE">
-                                        <rect key="frame" x="0.0" y="0.0" width="110" height="20"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="BLc-xx-buE">
+                                        <rect key="frame" x="0.0" y="0.0" width="49" height="21"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ks3-3S-m7v">
                                                 <rect key="frame" x="0.0" y="-0.5" width="22" height="20"/>
                                                 <color key="tintColor" red="0.9310366511" green="0.63863700629999998" blue="0.27036547659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Dce-B5-oqq">
-                                                <rect key="frame" x="22" y="-0.5" width="22" height="20"/>
-                                                <color key="tintColor" red="0.9310366511" green="0.63863700629999998" blue="0.27036547659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b23-EL-rXP">
+                                                <rect key="frame" x="26" y="0.0" width="23" height="21"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8Te-D2-i2U">
+                                        <rect key="frame" x="59" y="0.0" width="108.5" height="21"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2CG-OG-xb4">
+                                                <rect key="frame" x="0.0" y="0.5" width="20" height="19"/>
+                                                <color key="tintColor" systemColor="systemGray2Color"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6cx-g7-bSo">
-                                                <rect key="frame" x="44" y="-0.5" width="22" height="20"/>
-                                                <color key="tintColor" red="0.9310366511" green="0.63863700629999998" blue="0.27036547659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="drd-MM-Wye">
-                                                <rect key="frame" x="66" y="-0.5" width="22" height="20"/>
-                                                <color key="tintColor" red="0.9310366511" green="0.63863700629999998" blue="0.27036547659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.leadinghalf.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fL0-5G-An3">
-                                                <rect key="frame" x="88" y="-0.5" width="22" height="20"/>
-                                                <color key="tintColor" red="0.9310366511" green="0.63863700629999998" blue="0.27036547659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15-20 mins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4g-nx-9Gc">
+                                                <rect key="frame" x="25" y="0.0" width="83.5" height="21"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="BLc-xx-buE" secondAttribute="trailing" id="8wp-Y8-8PE"/>
+                                    <constraint firstItem="8Te-D2-i2U" firstAttribute="leading" secondItem="BLc-xx-buE" secondAttribute="trailing" constant="10" id="kIM-bG-hsZ"/>
                                     <constraint firstItem="BLc-xx-buE" firstAttribute="leading" secondItem="xZG-4k-9Fn" secondAttribute="leading" id="oae-LX-5kx"/>
                                     <constraint firstAttribute="bottom" secondItem="BLc-xx-buE" secondAttribute="bottom" id="p48-P9-UHA"/>
+                                    <constraint firstItem="8Te-D2-i2U" firstAttribute="centerY" secondItem="BLc-xx-buE" secondAttribute="centerY" id="rQF-Og-CbH"/>
                                     <constraint firstItem="BLc-xx-buE" firstAttribute="top" secondItem="xZG-4k-9Fn" secondAttribute="top" id="wD0-Oi-igZ"/>
                                 </constraints>
                             </view>
@@ -178,7 +186,7 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="d8j-jW-m0z" secondAttribute="trailing" constant="20" symbolic="YES" id="hcB-mW-7Vw"/>
                             <constraint firstItem="0Yj-ZX-7Pe" firstAttribute="centerY" secondItem="GFk-xn-yKN" secondAttribute="centerY" id="kCu-gH-AhW"/>
                             <constraint firstItem="1WR-p7-fuR" firstAttribute="top" secondItem="GFk-xn-yKN" secondAttribute="top" constant="5" id="meB-XX-I1S"/>
-                            <constraint firstItem="d8j-jW-m0z" firstAttribute="firstBaseline" secondItem="1WR-p7-fuR" secondAttribute="baseline" constant="20" symbolType="layoutAnchor" id="oCt-vp-2rP"/>
+                            <constraint firstItem="d8j-jW-m0z" firstAttribute="firstBaseline" secondItem="1WR-p7-fuR" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="oCt-vp-2rP"/>
                             <constraint firstItem="GFk-xn-yKN" firstAttribute="centerY" secondItem="pCJ-YH-BXR" secondAttribute="centerY" id="sIR-As-wY5"/>
                         </constraints>
                     </view>
@@ -202,6 +210,8 @@
                 <outlet property="nameLabel" destination="1WR-p7-fuR" id="EKk-sz-BWl"/>
                 <outlet property="priceLabel" destination="d8j-jW-m0z" id="alC-tA-KRA"/>
                 <outlet property="quantityLabel" destination="lBi-Jc-VAX" id="ggP-Nq-2t1"/>
+                <outlet property="ratingLabel" destination="b23-EL-rXP" id="I7e-G2-1Z6"/>
+                <outlet property="timeLabel" destination="N4g-nx-9Gc" id="HI1-id-xIz"/>
                 <outlet property="viewPlusMinus" destination="0Yj-ZX-7Pe" id="Omy-x0-1XB"/>
             </connections>
             <point key="canvasLocation" x="164.49275362318841" y="121.20535714285714"/>
@@ -209,10 +219,13 @@
     </objects>
     <resources>
         <image name="cart.fill.badge.plus" catalog="system" width="128" height="106"/>
+        <image name="clock" catalog="system" width="128" height="121"/>
         <image name="cuisine-sample" width="1024" height="768"/>
         <image name="minus" width="36" height="37"/>
         <image name="plus" width="36" height="37"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
-        <image name="star.leadinghalf.fill" catalog="system" width="128" height="116"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
