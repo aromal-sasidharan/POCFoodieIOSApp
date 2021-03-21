@@ -12,7 +12,7 @@ class FoodieLandingViewRouter: AbstractFoodieLandingViewRouter {
         guard let vc = from as? FoodieLandingView else {
             return
         }
-        let subVc = FoodieConfigurator.shared.createDishListView()
+        let subVc = FoodieConfigurator.shared.createDishListView(cuisineId: withCuisineId)
         vc.navigationController?.pushViewController(subVc, animated: true)
     }
     

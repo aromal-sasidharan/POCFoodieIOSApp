@@ -44,6 +44,7 @@
 		58D1A64E2606D21E008BD3C2 /* DishesListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A64D2606D21E008BD3C2 /* DishesListProtocol.swift */; };
 		58D1A6562606EDEA008BD3C2 /* Double+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A6552606EDEA008BD3C2 /* Double+Rounded.swift */; };
 		58D1A65B2606F5F5008BD3C2 /* DishListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A65A2606F5F5008BD3C2 /* DishListPresenter.swift */; };
+		58D1A667260702EE008BD3C2 /* DishListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A666260702EE008BD3C2 /* DishListRouter.swift */; };
 		D37D9159260615E7004F5B44 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37D9158260615E7004F5B44 /* Media.xcassets */; };
 		D37D91622606179B004F5B44 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D91612606179B004F5B44 /* CartView.swift */; };
 		D37D9167260617B1004F5B44 /* CartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D37D9166260617B1004F5B44 /* CartView.xib */; };
@@ -117,6 +118,7 @@
 		58D1A64D2606D21E008BD3C2 /* DishesListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesListProtocol.swift; sourceTree = "<group>"; };
 		58D1A6552606EDEA008BD3C2 /* Double+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Rounded.swift"; sourceTree = "<group>"; };
 		58D1A65A2606F5F5008BD3C2 /* DishListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListPresenter.swift; sourceTree = "<group>"; };
+		58D1A666260702EE008BD3C2 /* DishListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListRouter.swift; sourceTree = "<group>"; };
 		D37D9158260615E7004F5B44 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		D37D91612606179B004F5B44 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		D37D9166260617B1004F5B44 /* CartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartView.xib; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				58D1A62226060EFB008BD3C2 /* DishesInteractor.swift */,
 				58D1A64D2606D21E008BD3C2 /* DishesListProtocol.swift */,
 				58D1A65A2606F5F5008BD3C2 /* DishListPresenter.swift */,
+				58D1A666260702EE008BD3C2 /* DishListRouter.swift */,
 			);
 			path = DishList;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				58D1A58526059F4B008BD3C2 /* FoodieLandingViewPresenter.swift in Sources */,
 				58D1A65B2606F5F5008BD3C2 /* DishListPresenter.swift in Sources */,
 				D37D916E2606231D004F5B44 /* NotificationBarButton.swift in Sources */,
+				58D1A667260702EE008BD3C2 /* DishListRouter.swift in Sources */,
 				58560D112600E61900267341 /* FoodieLandingView.swift in Sources */,
 				58D1A5BD2605DD8D008BD3C2 /* BannerCollectionViewCell.swift in Sources */,
 				58D1A644260666F7008BD3C2 /* UIVIew+RoundedCorners.swift in Sources */,

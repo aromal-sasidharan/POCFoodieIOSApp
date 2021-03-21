@@ -11,6 +11,7 @@ protocol AbstractFoodieLandingViewRouter {
     func routeToDishList(from: AbstractFoodieLandingView?, withCuisineId: String)
     func routeToCartView(from: AbstractFoodieLandingView?)
 }
+
 protocol AbstractFoodieLandingView: UIViewController {
     
     var presenter: AbstractFoodieLandingViewOutput? {get set}
@@ -27,6 +28,7 @@ protocol AbstractFoodieLandingPresenter: AbstractFoodieLandingViewOutput, Abstra
     var cartSession: AbstractCartSessionInteractor? {get set}
     
 }
+
 
 protocol AbstractFoodieLandingViewOutput {
     func viewDidLoad()
