@@ -56,7 +56,7 @@ class DishTableViewCell: UITableViewCell {
         output?.removeFromCart(vm: vm, indexPath: indexPath, deleteAll: false)
     }
     
-    func configureViewModel(vm: AbstractDishViewModel?, output: AbstractDishTableViewCellOutput?) {
+    func configureViewModel(vm: AbstractDishViewModel?, output: AbstractDishTableViewCellOutput?, isCart: Bool = false) {
         self.vm = vm
         self.output = output
         self.nameLabel.text = vm?.name ?? ""
@@ -67,6 +67,11 @@ class DishTableViewCell: UITableViewCell {
         self.priceLabel.text = vm?.price ?? "0.0"
         if let url = vm?.imageUrl {
             self.dishImageView.downloaded(from: url, contentMode: .scaleToFill)
+        }
+        if isCart {
+            self.buttonCart.isHidden = true
+            self.viewPlusMinus.isHidden = true
+            self.ratingLabel.isHidden = true
         }
         
     }

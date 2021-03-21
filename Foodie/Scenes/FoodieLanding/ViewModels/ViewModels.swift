@@ -13,6 +13,9 @@ protocol AbstractCuisineViewModel {
     var imageUrl: URL? {get set}
     var entity: AbstractCuisine? {get set}
 }
+protocol AbstractCartTotalViewModel {
+     
+}
 
 
 struct CuisineViewModel: AbstractCuisineViewModel {
@@ -80,6 +83,20 @@ struct CuisineDishViewModel: AbstractDishViewModel {
         }
         vm.name = entity.name
         vm.rating = "\(entity.rating ?? 0.0)"
+        return vm
+    }
+    static func create(cartItem: AbstractCartItem?) -> AbstractDishViewModel? {
+        guard let entity = cartItem?.dish else {
+            return nil
+        }
+        var vm = CuisineDishViewModel()
+        vm.entity = entity
+        if let stringUrl = entity.image, let url = URL(string: stringUrl) {
+            vm.imageUrl = url
+        }
+        vm.name = entity.name
+        vm.rating = "\(entity.rating ?? 0.0)"
+        vm = (CuisineDishViewModel.updateQuantity(vm: vm, quantity: cartItem?.quantiy ?? 0) as? CuisineDishViewModel) ?? vm
         return vm
     }
     static func updateQuantity(vm: AbstractDishViewModel?, quantity: Int) -> AbstractDishViewModel? {
