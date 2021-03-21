@@ -5,7 +5,7 @@
             {
               "id": "1",
               "name": "Idli",
-              "image" : "https://hips.hearstapps.com/delish/assets/17/41/1507827432-beef-taco-boats-delish-1.jpg",
+              "image" : "https://www.indianhealthyrecipes.com/wp-content/uploads/2013/01/idli-recipe-1-500x500.jpg",
               "rating": 4.5,
               "price": 50.50
             },
@@ -100,7 +100,7 @@
             {
               "id": "13",
               "name": "MeatBalls Pasta",
-              "image" : "http://www.iitaly.org/sites/default/files/styles/article-slideshow-visual/public/slideshow_pro/Meatballspaghetti01_1310677492.jpg",
+              "image" : "https://www.jennycancook.com/wp-content/uploads/2015/08/quick-easy-spaghetti-meatballs.jpg",
               "rating": 4.0,
               "price": 130.00
             },
@@ -133,7 +133,7 @@
             {
               "id": "17",
               "name": "Beef Perankan",
-              "image" : "http://4.bp.blogspot.com/-B71_tzCcbC0/UP3VjKe4tJI/AAAAAAAAGng/u7ueXCPQiA4/s1600/IMG_1518.jpg",
+              "image" : "https://www.curiouscuisiniere.com/wp-content/uploads/2017/04/Russian-Beef-Stroganoff-1497.21.jpg",
               "rating": 4.5,
               "price": 230.00
             },
