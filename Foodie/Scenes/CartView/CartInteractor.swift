@@ -18,6 +18,7 @@ protocol AbstractCartSessionInteractor {
     func removeDish(dish: Entities.Dish)
     func allItems() -> [AbstractCartItem]
     func totalPriceOfItems() -> Double
+    func cartCount() -> Int
     func clearCart()
     
 }
@@ -37,11 +38,7 @@ class CartSessionInteractor: AbstractCartSessionInteractor  {
     }
     
     private func updateAllNotifier() {
-        let quantity =  cart.reduce(0, { (sum: Int, item: AbstractCartItem) -> Int in
-            var sum = sum
-            sum = sum + item.quantiy
-            return sum
-        })
+        let quantity = cartCount()
         for notifier in notifiers.values {
             notifier?.cartCountUpdate(count: quantity)
         }
@@ -101,5 +98,14 @@ class CartSessionInteractor: AbstractCartSessionInteractor  {
     func totalPriceOfItems() -> Double {
         let total = cart.map({Double($0.quantiy) * ($0.dish.price ?? 1.0)}).reduce(0, +)
         return total
+    }
+    
+    func cartCount() -> Int {
+        let quantity =  cart.reduce(0, { (sum: Int, item: AbstractCartItem) -> Int in
+            var sum = sum
+            sum = sum + item.quantiy
+            return sum
+        })
+        return quantity
     }
 }

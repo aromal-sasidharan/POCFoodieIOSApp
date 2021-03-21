@@ -37,6 +37,7 @@ class FoodieConfigurator {
         let view  = DishListView()
         let cartSession = CartSessionInteractor.shared
         let dishesWorker: AbstractDishesWorker = DishesWorker()
+        let router = DishListViewRouter()
         var presenter: AbstractDishListPresenter = DishListPresenter(cuisineId: cuisineId)
         var dishesInteractor: AbstractDishesInteractor = DishesInteractor()
         dishesInteractor.dishesWorker = dishesWorker
@@ -46,6 +47,7 @@ class FoodieConfigurator {
         dishesPresenter.cartSession = cartSession
         presenter.cartSession = cartSession
         presenter.dishesPresenter = dishesPresenter
+        presenter.router = router
         presenter.view = view
         view.presenter = presenter
         return view

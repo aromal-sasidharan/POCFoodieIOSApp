@@ -10,11 +10,11 @@ import UIKit
 
 class FoodieLandingView: UIViewController, AbstractFoodieLandingView {
     var presenter: AbstractFoodieLandingViewOutput?
-    
+    let notificationButton = NotificationBarButton()
     @IBOutlet weak var foodieTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBtn()
+        navigationBtnSetup()
         setupTableView()
         presenter?.viewDidLoad()
     }
@@ -24,10 +24,9 @@ class FoodieLandingView: UIViewController, AbstractFoodieLandingView {
         presenter?.viewDidReload()
     }
     
-    func navigationBtn() {
-        self.navigationItem.rightBarButtonItem = barBtn.shared
-        
-        barBtn.shared.tapAction = {
+    func navigationBtnSetup() {
+        self.navigationItem.rightBarButtonItem = notificationButton
+        notificationButton.tapAction = {
             self.presenter?.navigateCartView()
         }
     }
@@ -69,7 +68,7 @@ extension FoodieLandingView {
 }
 extension FoodieLandingView {
     func updateCartCount(count: Int) {
-        barBtn.shared.setBadge(with: count)
+        notificationButton.setBadge(with: count)
     }
 }
 extension FoodieLandingView: UITableViewDelegate, UITableViewDataSource {

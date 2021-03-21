@@ -8,13 +8,9 @@
 import Foundation
 import UIKit
 
-typealias barBtn = NotificationBarButton
 
 
 public class NotificationBarButton: UIBarButtonItem {
-    
-    public static let shared = NotificationBarButton()
-
     
     public var tapAction: (() -> Void)?
 

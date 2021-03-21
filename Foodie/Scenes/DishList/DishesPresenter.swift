@@ -15,7 +15,8 @@ class DishesPresenter: AbstractDishesPresenter {
     var output: AbstractDishesPresenterOutput?
     var interactor: AbstractDishesInteractor?
     var viewModels: [AbstractDishViewModel] = []
-    var cartSession: AbstractCartSessionInteractor?
+    var cartSession: AbstractCartSessionInteractor? 
+    
     func dishViewModelFor(index: Int) -> AbstractDishViewModel?  {
         var vm = viewModels[safe: index]
         let quantity:Int = cartSession?.quantityForDish(dish: vm?.entity) ?? 0
@@ -37,3 +38,4 @@ class DishesPresenter: AbstractDishesPresenter {
     }
     
 }
+
