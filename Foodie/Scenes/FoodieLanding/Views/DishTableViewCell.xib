@@ -27,7 +27,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pCJ-YH-BXR">
                         <rect key="frame" x="10" y="10" width="467" height="118"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cuisine-sample" translatesAutoresizingMaskIntoConstraints="NO" id="GFk-xn-yKN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="product-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="GFk-xn-yKN">
                                 <rect key="frame" x="10" y="19" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="3r2-Kp-yMg"/>
@@ -178,7 +178,7 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="d8j-jW-m0z" secondAttribute="trailing" constant="20" symbolic="YES" id="hcB-mW-7Vw"/>
                             <constraint firstItem="0Yj-ZX-7Pe" firstAttribute="centerY" secondItem="GFk-xn-yKN" secondAttribute="centerY" id="kCu-gH-AhW"/>
                             <constraint firstItem="1WR-p7-fuR" firstAttribute="top" secondItem="GFk-xn-yKN" secondAttribute="top" constant="5" id="meB-XX-I1S"/>
-                            <constraint firstItem="d8j-jW-m0z" firstAttribute="firstBaseline" secondItem="1WR-p7-fuR" secondAttribute="baseline" constant="20" symbolType="layoutAnchor" id="oCt-vp-2rP"/>
+                            <constraint firstItem="d8j-jW-m0z" firstAttribute="firstBaseline" secondItem="1WR-p7-fuR" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="oCt-vp-2rP"/>
                             <constraint firstItem="GFk-xn-yKN" firstAttribute="centerY" secondItem="pCJ-YH-BXR" secondAttribute="centerY" id="sIR-As-wY5"/>
                         </constraints>
                     </view>
@@ -209,9 +209,9 @@
     </objects>
     <resources>
         <image name="cart.fill.badge.plus" catalog="system" width="128" height="106"/>
-        <image name="cuisine-sample" width="1024" height="768"/>
         <image name="minus" width="36" height="37"/>
         <image name="plus" width="36" height="37"/>
+        <image name="product-placeholder" width="584" height="380"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="star.leadinghalf.fill" catalog="system" width="128" height="116"/>
     </resources>

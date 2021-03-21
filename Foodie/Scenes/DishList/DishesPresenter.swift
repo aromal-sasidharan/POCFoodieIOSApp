@@ -7,13 +7,15 @@
 
 import Foundation
 
-protocol AbstractDishListPresenterOutput {
+protocol AbstractDishesPresenterOutput {
     func onDishesUpdated()
 }
 
 class DishesPresenter: AbstractDishesPresenter {
+
+    
    
-    var output: AbstractDishListPresenterOutput?
+    var output: AbstractDishesPresenterOutput?
     var interactor: AbstractDishesInteractor?
     var viewModels: [AbstractDishViewModel] = []
     var cartSession: AbstractCartSessionInteractor?

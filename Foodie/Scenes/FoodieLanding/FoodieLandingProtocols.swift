@@ -42,7 +42,7 @@ protocol AbstractFoodieLandingInteractorOutput {
 }
 
 protocol AbstractDishesPresenter: AbstractDishesInteractorOutput {
-    var output: AbstractDishListPresenterOutput? {get set}
+    var output: AbstractDishesPresenterOutput? {get set}
     var interactor: AbstractDishesInteractor? {get set}
     var cartSession: AbstractCartSessionInteractor? {get set}
     func loadDishForCuisine(cuisineId: String)

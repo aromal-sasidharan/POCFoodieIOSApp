@@ -51,7 +51,7 @@ extension FoodieLandingViewPresenter: AbstractFoodieLandingInteractorOutput {
     }
 }
 
-extension FoodieLandingViewPresenter: AbstractDishListPresenterOutput {
+extension FoodieLandingViewPresenter: AbstractDishesPresenterOutput {
     func onDishesUpdated() {
         self.view?.loadDataForSection(section: 1)
     }
