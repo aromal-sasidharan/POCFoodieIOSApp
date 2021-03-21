@@ -192,8 +192,10 @@
                 <outlet property="nameLabel" destination="1WR-p7-fuR" id="EKk-sz-BWl"/>
                 <outlet property="priceLabel" destination="d8j-jW-m0z" id="alC-tA-KRA"/>
                 <outlet property="quantityLabel" destination="lBi-Jc-VAX" id="ggP-Nq-2t1"/>
+                <outlet property="ratingImageView" destination="ks3-3S-m7v" id="v4K-gQ-jjh"/>
                 <outlet property="ratingLabel" destination="2rQ-Ly-hoK" id="6Zk-i5-Xln"/>
                 <outlet property="viewPlusMinus" destination="0Yj-ZX-7Pe" id="Omy-x0-1XB"/>
+                <outlet property="viewRating" destination="xZG-4k-9Fn" id="hhV-Rg-PXV"/>
             </connections>
             <point key="canvasLocation" x="164.49275362318841" y="121.20535714285714"/>
         </tableViewCell>

@@ -23,9 +23,11 @@ class DishTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var buttonPlus: UIButton!
+    @IBOutlet weak var viewRating: UIView!
     @IBOutlet weak var buttonMinus: UIButton!
     @IBOutlet weak var buttonCart: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var ratingImageView: UIImageView!
     @IBOutlet weak var ratingLabel: UILabel!
     class var identifier: String {
         String(describing: Self.self)
@@ -70,10 +72,9 @@ class DishTableViewCell: UITableViewCell {
         }
         if isCart {
             self.buttonCart.isHidden = true
-            self.buttonPlus.isHidden = true
-            self.buttonMinus.isHidden = true
-            self.ratingLabel.isHidden = true
-//            self.quantityLabel.text = "X \(self.quantityLabel.text)"
+            self.viewPlusMinus.isHidden = true
+            self.ratingImageView.isHidden = true
+            self.ratingLabel.text = "Quantity X \(self.quantityLabel.text ?? "")"
             self.viewPlusMinus.backgroundColor = .clear
         }
         

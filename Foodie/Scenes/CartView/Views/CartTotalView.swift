@@ -1,18 +1,23 @@
 //
-//  PaymentFooterViewCell.swift
+//  CartTotalView.swift
 //  Foodie
 //
-//  Created by Aromal Sasidharan on 20/3/21.
+//  Created by mahesh.varadara on 21/3/21.
 //
 
+import Foundation
 import UIKit
 
-class CartFooterViewCell: UITableViewHeaderFooterView {
+protocol CartTotalViewOutput {
+    func onTapPayNow()
+}
+
+class CartTotalView: UIView {
     
-//    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    var output: CartTotalViewOutput?
+    @IBOutlet weak var buttonPayNow: UIButton!
     @IBOutlet weak var bgCardView: UIView!
     @IBOutlet weak var labelSGST: UILabel!
-    
     @IBOutlet weak var labelTotal: UILabel!
     @IBOutlet weak var labelCGST: UILabel!
     @IBOutlet weak var labelSubTotal: UILabel!
@@ -22,20 +27,17 @@ class CartFooterViewCell: UITableViewHeaderFooterView {
     }
     
     // Only override draw() if you perform custom drawing.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override func awakeFromNib() {
+        super.awakeFromNib()
         bgCardView.layer.shadowColor = UIColor.lightGray.cgColor
         bgCardView.layer.shadowRadius = 4.0
         bgCardView.layer.cornerRadius = 10.0
         bgCardView.layer.shadowOpacity = 1.0;
         bgCardView.layer.shadowOffset = CGSize(width: 1, height: 1)
         self.backgroundColor = .clear
-//        if UIDevice.current.hasNotch {
-//            bottomConstraint.constant = -35
-//        } else {
-//            bottomConstraint.constant = 0
-//        }
+        self.buttonPayNow.addTarget(self, action: #selector(actionPayNow), for: .touchUpInside)
     }
+
     
     func configure(vm: AbstractCartTotalViewModel?) {
         labelSGST.text = vm?.sgst ?? "0"
@@ -44,6 +46,9 @@ class CartFooterViewCell: UITableViewHeaderFooterView {
         labelSubTotal.text = vm?.subtotal ?? "0"
     }
     
+    @objc private func actionPayNow() {
+        
+        output?.onTapPayNow()
+    }
+    
 }
-
-

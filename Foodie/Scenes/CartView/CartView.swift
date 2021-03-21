@@ -8,13 +8,19 @@
 import UIKit
 
 class CartView: UIViewController, AbstractCartView {
+   
+    
     @IBOutlet weak var cartTableView: UITableView!
+    @IBOutlet weak var cartTotalView: CartTotalView!
+
+    
     var presenter: AbstractCartViewPresenter?
     override func viewDidLoad() {
         super.viewDidLoad()
         cartTableView.delegate = self
         cartTableView.dataSource = self
         registerTableView()
+        cartTotalView.output = presenter as? CartTotalViewOutput
         presenter?.viewDidLoad()
     }
     
@@ -28,7 +34,6 @@ class CartView: UIViewController, AbstractCartView {
                                   bundle: nil)
         cartTableView.register(dishCell,
                                  forCellReuseIdentifier: DishTableViewCell.identifier)
-        cartTableView.register(UINib(nibName: "CartFooterViewCell", bundle: nil), forHeaderFooterViewReuseIdentifier: CartFooterViewCell.identifier)
     }
 
 }
@@ -38,8 +43,8 @@ extension CartView {
         cartTableView.reloadData()
     }
     
-    func reloadTotal() {
-        
+    func reloadTotal(vm: AbstractCartTotalViewModel?) {
+        cartTotalView.configure(vm: vm)
     }
 }
 
@@ -54,18 +59,4 @@ extension CartView: UITableViewDelegate, UITableViewDataSource {
         cell.configureViewModel(vm: vm, output: nil, isCart: true)
         return cell
     }
-    
-     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        guard let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: CartFooterViewCell.identifier) as? CartFooterViewCell else {
-            fatalError("Error in deque cell")
-        }
-        footerView.backgroundColor = .clear
-        footerView.configure(vm: presenter?.cartTotalViewModel())
-        return footerView
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
-        return tableView.estimatedRowHeight
-    }
-
 }

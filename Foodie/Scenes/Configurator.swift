@@ -42,9 +42,11 @@ class FoodieConfigurator {
         let view = CartView()
         let cartSession = CartSessionInteractor.shared
         var presenter: AbstractCartViewPresenter = CartViewPresenter()
+        let router: AbstractCartViewRouter = CartViewRouter()
         view.presenter = presenter
         presenter.cartView = view
         presenter.cartSession = cartSession
+        presenter.router = router
         return view
     }
     

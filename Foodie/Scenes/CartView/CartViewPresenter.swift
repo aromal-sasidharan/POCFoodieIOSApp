@@ -7,11 +7,13 @@
 
 import Foundation
 
-
+protocol AbstractCartViewRouter {
+    func routeToHomeView(from: AbstractCartView?)
+}
 protocol AbstractCartView {
     var presenter: AbstractCartViewPresenter? {get set}
     func reloadCartList()
-    func reloadTotal()
+    func reloadTotal(vm: AbstractCartTotalViewModel?)
 }
 
 protocol AbstractCartViewOutput {
@@ -23,9 +25,11 @@ protocol AbstractCartViewOutput {
 protocol AbstractCartViewPresenter: AbstractCartViewOutput {
     var cartView: AbstractCartView? {get set}
     var cartSession: AbstractCartSessionInteractor? {get set}
+    var router: AbstractCartViewRouter? {get set}
 }
 
 class CartViewPresenter: AbstractCartViewPresenter  {
+    var router: AbstractCartViewRouter?
     var cartView: AbstractCartView?
     var cartSession: AbstractCartSessionInteractor?
     var viewModels: [AbstractDishViewModel] = []
@@ -52,9 +56,16 @@ class CartViewPresenter: AbstractCartViewPresenter  {
         let sgst = ((subtotal * 2.5) / 100.0)
         let finalTotal = subtotal.round(to: 2) + cgst.round(to: 2) + sgst.round(to: 2)
         totalViewModel = CartTotalViewModel.create(subtotal: subtotal.round(to: 2), cgst: cgst.round(to: 2), sgst: sgst.round(to: 2), total: finalTotal.round(to: 2))
+        cartView?.reloadTotal(vm: totalViewModel)
     }
     
     func numberOfDishes() -> Int {
         return viewModels.count
+    }
+}
+
+extension CartViewPresenter: CartTotalViewOutput {
+    func onTapPayNow() {
+        router?.routeToHomeView(from: self.cartView)
     }
 }

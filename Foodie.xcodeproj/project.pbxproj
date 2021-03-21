@@ -44,12 +44,12 @@
 		58D1A6492606D06B008BD3C2 /* CartViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A6482606D06A008BD3C2 /* CartViewPresenter.swift */; };
 		58D1A64E2606D21E008BD3C2 /* DishesListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A64D2606D21E008BD3C2 /* DishesListProtocol.swift */; };
 		58D1A6562606EDEA008BD3C2 /* Double+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A6552606EDEA008BD3C2 /* Double+Rounded.swift */; };
+		D32D9EEA26070B5D009B2EC7 /* CartTotalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32D9EE926070B5D009B2EC7 /* CartTotalView.swift */; };
 		D37D9159260615E7004F5B44 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37D9158260615E7004F5B44 /* Media.xcassets */; };
 		D37D91622606179B004F5B44 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D91612606179B004F5B44 /* CartView.swift */; };
 		D37D9167260617B1004F5B44 /* CartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D37D9166260617B1004F5B44 /* CartView.xib */; };
 		D37D916E2606231D004F5B44 /* NotificationBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D916D2606231D004F5B44 /* NotificationBarButton.swift */; };
-		D37D918026062BF0004F5B44 /* CartFooterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D917E26062BF0004F5B44 /* CartFooterViewCell.swift */; };
-		D37D918126062BF0004F5B44 /* CartFooterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D37D917F26062BF0004F5B44 /* CartFooterViewCell.xib */; };
+		D37D91B22606F858004F5B44 /* CartViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D91B12606F858004F5B44 /* CartViewRouter.swift */; };
 		D3B540622605EAB700B90631 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B5405F2605EAB700B90631 /* Poppins-ExtraLight.ttf */; };
 		D3B540632605EAB700B90631 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B540602605EAB700B90631 /* Poppins-Medium.ttf */; };
 		D3B540642605EAB700B90631 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B540612605EAB700B90631 /* Poppins-Regular.ttf */; };
@@ -117,12 +117,12 @@
 		58D1A6482606D06A008BD3C2 /* CartViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewPresenter.swift; sourceTree = "<group>"; };
 		58D1A64D2606D21E008BD3C2 /* DishesListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesListProtocol.swift; sourceTree = "<group>"; };
 		58D1A6552606EDEA008BD3C2 /* Double+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Rounded.swift"; sourceTree = "<group>"; };
+		D32D9EE926070B5D009B2EC7 /* CartTotalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTotalView.swift; sourceTree = "<group>"; };
 		D37D9158260615E7004F5B44 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		D37D91612606179B004F5B44 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		D37D9166260617B1004F5B44 /* CartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartView.xib; sourceTree = "<group>"; };
 		D37D916D2606231D004F5B44 /* NotificationBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBarButton.swift; sourceTree = "<group>"; };
-		D37D917E26062BF0004F5B44 /* CartFooterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartFooterViewCell.swift; sourceTree = "<group>"; };
-		D37D917F26062BF0004F5B44 /* CartFooterViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartFooterViewCell.xib; sourceTree = "<group>"; };
+		D37D91B12606F858004F5B44 /* CartViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewRouter.swift; sourceTree = "<group>"; };
 		D3B5405F2605EAB700B90631 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
 		D3B540602605EAB700B90631 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		D3B540612605EAB700B90631 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
@@ -326,6 +326,7 @@
 				D37D9166260617B1004F5B44 /* CartView.xib */,
 				58D1A63E26064955008BD3C2 /* CartInteractor.swift */,
 				58D1A6482606D06A008BD3C2 /* CartViewPresenter.swift */,
+				D37D91B12606F858004F5B44 /* CartViewRouter.swift */,
 			);
 			path = CartView;
 			sourceTree = "<group>";
@@ -333,8 +334,7 @@
 		D37D916B26061F04004F5B44 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D37D917E26062BF0004F5B44 /* CartFooterViewCell.swift */,
-				D37D917F26062BF0004F5B44 /* CartFooterViewCell.xib */,
+				D32D9EE926070B5D009B2EC7 /* CartTotalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -466,7 +466,6 @@
 				58D1A5A22605AD39008BD3C2 /* Cuisine.json in Resources */,
 				D3B5406C2605F66B00B90631 /* Dishes.json in Resources */,
 				D3B540642605EAB700B90631 /* Poppins-Regular.ttf in Resources */,
-				D37D918126062BF0004F5B44 /* CartFooterViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +495,7 @@
 				58D1A5D02605E462008BD3C2 /* DishTableViewCell.swift in Sources */,
 				58D1A5F82605FC64008BD3C2 /* FoodieLandingInteractor.swift in Sources */,
 				58D1A6562606EDEA008BD3C2 /* Double+Rounded.swift in Sources */,
+				D37D91B22606F858004F5B44 /* CartViewRouter.swift in Sources */,
 				58560CDD2600E4E900267341 /* ViewController.swift in Sources */,
 				58560CD92600E4E900267341 /* AppDelegate.swift in Sources */,
 				58D1A58A26059FDA008BD3C2 /* ViewModels.swift in Sources */,
@@ -513,10 +513,10 @@
 				58D1A5962605AAF8008BD3C2 /* Entities.swift in Sources */,
 				58D1A62826060F5B008BD3C2 /* DishesWorker.swift in Sources */,
 				58D1A5DA2605E811008BD3C2 /* DishListView.swift in Sources */,
+				D32D9EEA26070B5D009B2EC7 /* CartTotalView.swift in Sources */,
 				58D1A61926060E11008BD3C2 /* UIImageView+Download.swift in Sources */,
 				58560CDB2600E4E900267341 /* SceneDelegate.swift in Sources */,
 				58D1A59C2605AB38008BD3C2 /* FoodieCuisineWorker.swift in Sources */,
-				D37D918026062BF0004F5B44 /* CartFooterViewCell.swift in Sources */,
 				58560D272600E95200267341 /* FoodieLandingProtocols.swift in Sources */,
 				58D1A62326060EFB008BD3C2 /* DishesInteractor.swift in Sources */,
 				58D1A5E52605E916008BD3C2 /* FoodieLandingViewRouter.swift in Sources */,
