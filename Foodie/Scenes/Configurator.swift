@@ -40,6 +40,11 @@ class FoodieConfigurator {
     
     func createCartView() -> UIViewController {
         let view = CartView()
+        let cartSession = CartSessionInteractor.shared
+        var presenter: AbstractCartViewPresenter = CartViewPresenter()
+        view.presenter = presenter
+        presenter.cartView = view
+        presenter.cartSession = cartSession
         return view
     }
     

@@ -7,13 +7,15 @@
 
 import UIKit
 
-class CartView: UIViewController {
+class CartView: UIViewController, AbstractCartView {
     @IBOutlet weak var cartTableView: UITableView!
+    var presenter: AbstractCartViewPresenter?
     override func viewDidLoad() {
         super.viewDidLoad()
         cartTableView.delegate = self
         cartTableView.dataSource = self
         registerTableView()
+        presenter?.viewDidLoad()
     }
     
     func registerTableView() {
@@ -31,14 +33,25 @@ class CartView: UIViewController {
 
 }
 
+extension CartView {
+    func reloadCartList() {
+        cartTableView.reloadData()
+    }
+    
+    func reloadTotal() {
+        
+    }
+}
+
 extension CartView: UITableViewDelegate, UITableViewDataSource {
     
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return presenter?.numberOfDishes() ?? 0
     }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DishTableViewCell") as? DishTableViewCell else {fatalError("Error")}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DishTableViewCell") as? DishTableViewCell, let vm = presenter?.dishViewModelFor(index: indexPath.row) else {fatalError("Error")}
+        cell.configureViewModel(vm: vm, output: nil, isCart: true)
         return cell
     }
     

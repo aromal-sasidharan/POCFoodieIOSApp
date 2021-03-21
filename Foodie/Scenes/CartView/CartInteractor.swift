@@ -16,6 +16,7 @@ protocol AbstractCartSessionInteractor {
     func quantityForDish(dish: AbstractDish?) -> Int
     func subscribeForCartNotication(identifier: String, notifier: AbstractCartCountNotifier?)
     func removeDish(dish: Entities.Dish)
+    func allItems() -> [AbstractCartItem]
     func clearCart()
     
 }
@@ -91,5 +92,8 @@ class CartSessionInteractor: AbstractCartSessionInteractor  {
         var item = item
         item.quantiy = item.quantiy - 1
         return item
+    }
+    func allItems() -> [AbstractCartItem] {
+        return cart
     }
 }
