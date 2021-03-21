@@ -7,16 +7,30 @@
 
 import Foundation
 
+protocol AbstractAbstractDishListViewRouter {
+    func routeToCartView(from: AbstractDishListView?)
+}
+
 
 protocol AbstractDishListView {
-    
+    var presenter: AbstractDishListViewOutput? {get set}
+    func loadDataForSection(section: Int?)
+    func loadDataForRow(section: Int?, row: Int?)
 }
 
-protocol AbstractDishListPresenterOutput {
-    
+protocol AbstractDishListViewOutput {
+    func viewDidLoad()
+    func viewDidReload()
+    func totalSections() -> Int
+    func totalRowsForSection(_ section: Int) -> Int
+    func dishViewModel(indexPath: IndexPath) -> AbstractDishViewModel?
+    func navigateCartView()
 }
 
-protocol AbstractDishListPresenter {
-    
+protocol AbstractDishListPresenter: AbstractDishListViewOutput {
+    var view: AbstractDishListView? {get set}
+    var router: AbstractAbstractDishListViewRouter? {get set}
+    var dishesPresenter: AbstractDishesPresenter? {get set}
+    var cartSession: AbstractCartSessionInteractor? {get set}
 }
 

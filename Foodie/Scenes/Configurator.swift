@@ -33,8 +33,21 @@ class FoodieConfigurator {
         cuisineInteractor.output = presenter
         return view
     }
-    func createDishListView() -> UIViewController {
+    func createDishListView(cuisineId: String) -> UIViewController {
         let view  = DishListView()
+        let cartSession = CartSessionInteractor.shared
+        let dishesWorker: AbstractDishesWorker = DishesWorker()
+        var presenter: AbstractDishListPresenter = DishListPresenter(cuisineId: cuisineId)
+        var dishesInteractor: AbstractDishesInteractor = DishesInteractor()
+        dishesInteractor.dishesWorker = dishesWorker
+        var dishesPresenter: AbstractDishesPresenter = DishesPresenter()
+        dishesInteractor.ouput = dishesPresenter
+        dishesPresenter.interactor = dishesInteractor
+        dishesPresenter.cartSession = cartSession
+        presenter.cartSession = cartSession
+        presenter.dishesPresenter = dishesPresenter
+        presenter.view = view
+        view.presenter = presenter
         return view
     }
     

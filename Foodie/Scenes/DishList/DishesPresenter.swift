@@ -12,9 +12,6 @@ protocol AbstractDishesPresenterOutput {
 }
 
 class DishesPresenter: AbstractDishesPresenter {
-
-    
-   
     var output: AbstractDishesPresenterOutput?
     var interactor: AbstractDishesInteractor?
     var viewModels: [AbstractDishViewModel] = []

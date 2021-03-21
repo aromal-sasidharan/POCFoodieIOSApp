@@ -4,12 +4,12 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DishListView" customModule="Foodie" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="9FF-6Y-aRw" id="c2e-M5-gvq"/>
                 <outlet property="view" destination="iN0-l3-epB" id="tBB-WH-UEv"/>
             </connections>
         </placeholder>
@@ -17,14 +17,21 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9FF-6Y-aRw">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemTealColor"/>
+            <color key="backgroundColor" red="0.97275525330000001" green="0.9606756568" blue="0.94884866479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="9FF-6Y-aRw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="B7d-fs-5Sd"/>
+                <constraint firstItem="9FF-6Y-aRw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="DLP-H3-2Mt"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="9FF-6Y-aRw" secondAttribute="bottom" id="OQ8-fl-B9H"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9FF-6Y-aRw" secondAttribute="trailing" id="VmH-Lh-IYY"/>
+            </constraints>
             <point key="canvasLocation" x="135" y="47"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

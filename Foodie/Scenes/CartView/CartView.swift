@@ -10,6 +10,8 @@ import UIKit
 class CartView: UIViewController, AbstractCartView {
    
     
+   
+    
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var cartTotalView: CartTotalView!
 
@@ -46,6 +48,17 @@ extension CartView {
     func reloadTotal(vm: AbstractCartTotalViewModel?) {
         cartTotalView.configure(vm: vm)
     }
+    
+    func showAlertView(alert: (() -> ())?) {
+        let payNowAlert = UIAlertController(title: "Foodie", message: "Payment made successfully", preferredStyle: UIAlertController.Style.alert)
+
+        payNowAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+              print("Handle Ok logic here")
+            alert?()
+        }))
+        present(payNowAlert, animated: true, completion: nil)
+    }
+   
 }
 
 extension CartView: UITableViewDelegate, UITableViewDataSource {

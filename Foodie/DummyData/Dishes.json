@@ -7,14 +7,14 @@
               "name": "Idli",
               "image" : "https://www.indianhealthyrecipes.com/wp-content/uploads/2013/01/idli-recipe-1-500x500.jpg",
               "rating": 4.5,
-              "price": 50.00
+              "price": 50.50
             },
             {
               "id": "2",
               "name": "Briyani",
               "image" : "https://www.asiaone.com/sites/default/files/styles/a1_og_image/public/original_images/Mar2020/20200311-briyani-pex.jpg?itok=YtjWThUr",
               "rating": 5.0,
-              "price": 110.00
+              "price": 110.70
             },
             {
               "id": "3",

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol AbstractCartViewRouter {
     func routeToHomeView(from: AbstractCartView?)
@@ -14,6 +15,7 @@ protocol AbstractCartView {
     var presenter: AbstractCartViewPresenter? {get set}
     func reloadCartList()
     func reloadTotal(vm: AbstractCartTotalViewModel?)
+    func showAlertView(alert: (() -> ())?)
 }
 
 protocol AbstractCartViewOutput {
@@ -66,6 +68,9 @@ class CartViewPresenter: AbstractCartViewPresenter  {
 
 extension CartViewPresenter: CartTotalViewOutput {
     func onTapPayNow() {
-        router?.routeToHomeView(from: self.cartView)
+        cartView?.showAlertView(alert: { [weak self] in
+            self?.cartSession?.clearCart()
+            self?.router?.routeToHomeView(from: self?.cartView)
+        })
     }
 }

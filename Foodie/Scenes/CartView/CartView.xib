@@ -34,9 +34,9 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9Fe-sw-ZLN">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                             <subviews>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Np8-L0-uVw">
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Np8-L0-uVw">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="602"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="backgroundColor" red="0.97275525330000001" green="0.9606756568" blue="0.94884866479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <outlet property="dataSource" destination="iN0-l3-epB" id="IwH-xf-0z7"/>
                                         <outlet property="delegate" destination="iN0-l3-epB" id="xsf-nk-zaH"/>
@@ -194,7 +194,7 @@
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" red="0.97275525330000001" green="0.9606756568" blue="0.94884866479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="9Fe-sw-ZLN" firstAttribute="top" secondItem="MWy-bt-5U4" secondAttribute="top" id="EQf-wg-d1k"/>
                         <constraint firstItem="9Fe-sw-ZLN" firstAttribute="leading" secondItem="MWy-bt-5U4" secondAttribute="leading" id="FuH-ZB-srq"/>

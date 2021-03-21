@@ -19,6 +19,11 @@ class FoodieLandingView: UIViewController, AbstractFoodieLandingView {
         presenter?.viewDidLoad()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presenter?.viewDidReload()
+    }
+    
     func navigationBtn() {
         self.navigationItem.rightBarButtonItem = barBtn.shared
         
