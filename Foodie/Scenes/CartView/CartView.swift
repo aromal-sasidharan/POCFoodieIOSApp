@@ -50,7 +50,7 @@ extension CartView: UITableViewDelegate, UITableViewDataSource {
     }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DishTableViewCell") as? DishTableViewCell, let vm = presenter?.dishViewModelFor(index: indexPath.row) else {fatalError("Error")}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: DishTableViewCell.identifier) as? DishTableViewCell, let vm = presenter?.dishViewModelFor(index: indexPath.row) else {fatalError("Error")}
         cell.configureViewModel(vm: vm, output: nil, isCart: true)
         return cell
     }
