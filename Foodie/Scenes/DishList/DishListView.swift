@@ -10,10 +10,12 @@ import UIKit
 
 class DishListView: UIViewController, AbstractDishListView {
     var presenter: AbstractDishListViewOutput?
+    let notificationButton = NotificationBarButton()
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationBtnSetup()
         registerTableView()
         navigationBtn()
         presenter?.viewDidLoad()
@@ -40,6 +42,12 @@ class DishListView: UIViewController, AbstractDishListView {
         }
         self.tableView.reloadRows(at: [[section,row]], with: .none)
     }
+    func navigationBtnSetup() {
+        self.navigationItem.rightBarButtonItem = notificationButton
+        notificationButton.tapAction = {
+            self.presenter?.navigateCartView()
+        }
+    }
     func registerTableView() {
         
         tableView.rowHeight = UITableView.automaticDimension
@@ -51,6 +59,12 @@ class DishListView: UIViewController, AbstractDishListView {
                                   bundle: nil)
         tableView.register(dishCell,
                                  forCellReuseIdentifier: DishTableViewCell.identifier)
+    }
+}
+
+extension DishListView {
+    func updateCartCount(count: Int) {
+        notificationButton.setBadge(with: count)
     }
 }
 

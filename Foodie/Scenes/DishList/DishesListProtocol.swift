@@ -16,6 +16,7 @@ protocol AbstractDishListView {
     var presenter: AbstractDishListViewOutput? {get set}
     func loadDataForSection(section: Int?)
     func loadDataForRow(section: Int?, row: Int?)
+    func updateCartCount(count: Int)
 }
 
 protocol AbstractDishListViewOutput {

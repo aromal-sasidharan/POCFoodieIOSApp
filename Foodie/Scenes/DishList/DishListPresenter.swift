@@ -20,7 +20,13 @@ class DishListPresenter: AbstractDishListPresenter {
     }
     
     
-    var cartSession: AbstractCartSessionInteractor?
+    var cartSession: AbstractCartSessionInteractor? {
+        didSet {
+            self.cartSession?
+                .subscribeForCartNotication(identifier: String(describing: Self.self),
+                                            notifier: self)
+        }
+    }
     
     private let cuisineId: String
     
@@ -30,10 +36,10 @@ class DishListPresenter: AbstractDishListPresenter {
     
     func viewDidLoad() {
         dishesPresenter?.loadDishForCuisine(cuisineId: cuisineId, limit: 0)
+        view?.updateCartCount(count: cartSession?.cartCount() ??  0)
     }
     
     func viewDidReload() {
-        
     }
     
     func totalSections() -> Int {
@@ -74,5 +80,11 @@ extension DishListPresenter: AbstractDishTableViewCellOutput {
 extension DishListPresenter: AbstractDishesPresenterOutput {
     func onDishesUpdated() {
         self.view?.loadDataForSection(section: nil)
+    }
+}
+
+extension DishListPresenter: AbstractCartCountNotifier {
+    func cartCountUpdate(count: Int) {
+        view?.updateCartCount(count: count)
     }
 }
