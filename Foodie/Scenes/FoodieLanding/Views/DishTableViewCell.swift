@@ -75,7 +75,6 @@ class DishTableViewCell: UITableViewCell {
             self.ratingLabel.isHidden = true
 //            self.quantityLabel.text = "X \(self.quantityLabel.text)"
             self.viewPlusMinus.backgroundColor = .clear
-            self.priceLabel.isHidden = true
         }
         
     }

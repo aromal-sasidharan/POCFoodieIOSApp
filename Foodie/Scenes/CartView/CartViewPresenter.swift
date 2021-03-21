@@ -17,6 +17,7 @@ protocol AbstractCartView {
 protocol AbstractCartViewOutput {
     func viewDidLoad()
     func dishViewModelFor(index: Int) -> AbstractDishViewModel?
+    func cartTotalViewModel() -> AbstractCartTotalViewModel?
     func numberOfDishes() -> Int
 }
 protocol AbstractCartViewPresenter: AbstractCartViewOutput {
@@ -28,15 +29,31 @@ class CartViewPresenter: AbstractCartViewPresenter  {
     var cartView: AbstractCartView?
     var cartSession: AbstractCartSessionInteractor?
     var viewModels: [AbstractDishViewModel] = []
+    var totalViewModel: AbstractCartTotalViewModel?
     func dishViewModelFor(index: Int) -> AbstractDishViewModel? {
         return viewModels[safe: index]
     }
+    
+    func cartTotalViewModel() -> AbstractCartTotalViewModel? {
+        return totalViewModel
+    }
+    
     func viewDidLoad() {
         viewModels.removeAll()
         let vms = cartSession?.allItems().map({CuisineDishViewModel.create(cartItem: $0)}).compactMap({$0}) ?? []
         viewModels.append(contentsOf: vms)
+        updateTotals()
         cartView?.reloadCartList()
     }
+    
+    private func updateTotals() {
+        let subtotal = cartSession?.totalPriceOfItems() ?? 0.0
+        let cgst = ((subtotal * 2.5) / 100.0)
+        let sgst = ((subtotal * 2.5) / 100.0)
+        let finalTotal = subtotal.round(to: 2) + cgst.round(to: 2) + sgst.round(to: 2)
+        totalViewModel = CartTotalViewModel.create(subtotal: subtotal.round(to: 2), cgst: cgst.round(to: 2), sgst: sgst.round(to: 2), total: finalTotal.round(to: 2))
+    }
+    
     func numberOfDishes() -> Int {
         return viewModels.count
     }

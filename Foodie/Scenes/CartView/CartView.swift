@@ -60,6 +60,7 @@ extension CartView: UITableViewDelegate, UITableViewDataSource {
             fatalError("Error in deque cell")
         }
         footerView.backgroundColor = .clear
+        footerView.configure(vm: presenter?.cartTotalViewModel())
         return footerView
     }
     
